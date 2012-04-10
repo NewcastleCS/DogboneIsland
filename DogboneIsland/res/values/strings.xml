@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+   <string name="app_name">Dogbone Island</string>
+    
+    <string name="word">hello</string>
+    <string name="desc">HangMan</string>
+    <string name="WonTxt">Ye have prevailed me hearty!</string>
+    <string name="LostTxt">Ye be actin like a landlubber!</string>
+    <string name="ReminderButton">Remind Me!</string>
+    <string name="srv">http://ncl.sevki.org</string>
+</resources>
