@@ -1,169 +1,36 @@
 package team18.cs.ncl.ac.uk;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.Random;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.StatusLine;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
-
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import android.app.Application;
-import android.os.Environment;
-import android.util.Xml;
 
 public class FlashCardTools extends Application {
-	private  String WEB_PATH = "http://ncl.sevki.org/dictionary.xml";
 	
-	private File ROOT_PATH  = Environment.getExternalStorageDirectory();
-	private  File DICTIONARY_PATH = new File(ROOT_PATH," team18.cs.ncl.ac.uk.dictionary.xml");
+	
 
-
-	boolean inWord = false;
-	boolean inDef = false;
-	public static LinkedList<WordPair> pairs = new LinkedList<WordPair>();
-	class MyXmlContentHandler extends DefaultHandler {
-		String currentNode;
-		  @Override
-	        public void startElement(String uri, String localName, String qName, org.xml.sax.Attributes atts) throws SAXException {
-	            super.startElement(uri, localName, qName, atts);
-	            if (localName.equals("item")) {
-	                new WordPair();
-	            	pairs.add(new WordPair());
-	            } 
-	            
-	            inWord=localName.equals("word") ? true:false;
-	            inDef = localName.equals("definition") ? true:false;
-	        }
-		  @Override
-		  public void characters(char[] ch, int start, int length) throws SAXException {
-
-		      String value = new String(ch, start, length);
-		      if (inDef &&pairs.size()>0){
-		    	
-		    	  pairs.get(pairs.size()-1).Definition += value;
-		    	  String s =pairs.get(pairs.size()-1).Definition;
-			      System.out.println("definition:"+value+"->"+s);
-			      pairs.get(pairs.size()-1).Definition=s.trim();
-			  	
-		      }else if (inWord&&pairs.size()>0){
-		    	
-			    	  pairs.get(pairs.size()-1).Word += value.toString();
-			    	  String s =pairs.get(pairs.size()-1).Word;
-				      System.out.println("word:"+value +"->"+s);
-				      pairs.get(pairs.size()-1).Word=s.trim();
-				  	
-			      }
-		  
-		  }
-
-		}
-	public WordPair getRandom()
+	public static String getImageUrlForWord(String p)
 	{
-		try {
-			System.out.println("reading");
-			ReadFromLocal();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			System.out.println("io barfed");
-			e.printStackTrace();
-		} catch (SAXException e) {
-			System.out.println("SAX has dierrhieaaaaaa");
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.out.println("getting random");
-		Random rn = new Random();
-		if (pairs.size()==0) {
-			return new WordPair("ERROR", "ERROR");
-		}
-		return pairs.get(rn.nextInt(pairs.size()));
+		String SEARCH_PATH = "http://api.bing.net/json.aspx?AppID=B8E39C5C43D0A494048CED221914969B3893FD4E&Sources=Image&Image.Count=1&Query=";
 		
-			
-	}
-	public boolean ReadFromLocal() throws  IOException, SAXException
-	{
-		        FileInputStream fIn;
-		        System.out.println("now opening");
-	         fIn = new FileInputStream(DICTIONARY_PATH);
-	         StringBuffer sBuffer = new StringBuffer("");
-	         int ch;
-	         System.out.println("now reading");
-	         while( (ch = fIn.read()) != -1)
-	             sBuffer.append((char)ch);
-	         
-	         System.out.println("now parsing" + sBuffer +"wrote sbuffer");
-	         Xml.parse(sBuffer.toString(), new MyXmlContentHandler());
-	     
-	         return false;
-	}
-    public Boolean DownloadDictionaryToLocal()
-    {
-    	String reString = ReadWebStream(WEB_PATH);
-    	 try {
-				File f = DICTIONARY_PATH;
-			
-				if (!f.exists()) {
-					f.createNewFile();
-				}
-				System.out.print("about to write"+reString);
-			FileOutputStream fos = new FileOutputStream(DICTIONARY_PATH);
-			fos.write(reString.getBytes());
-			System.out.print("wrote"+reString);
-
-			fos.close();
-			
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			
-			e.printStackTrace();
-		}
-		catch (NullPointerException e) {
-		
-		}
-		return true;
-
-    }
-    public static String ReadWebStream(String url) {
-    	StringBuilder builder = new StringBuilder();
-		HttpClient client = new DefaultHttpClient();
-		HttpGet httpGet = new HttpGet(
-				url);
+		SEARCH_PATH +=p;
 		try {
-			HttpResponse response = client.execute(httpGet);
-			StatusLine statusLine = response.getStatusLine();
-			int statusCode = statusLine.getStatusCode();
-			if (statusCode == 200) {
-				HttpEntity entity = response.getEntity();
-				InputStream content = entity.getContent();
-				BufferedReader reader = new BufferedReader(
-						new InputStreamReader(content));
-				String line;
-				while ((line = reader.readLine()) != null) {
-					builder.append(line);
-				}
-			} else {
-			}
-		} catch (ClientProtocolException e) {
+			JSONObject sea= new JSONObject(DictionaryTools.ReadWebStream(SEARCH_PATH));
+			JSONObject sr= (JSONObject) sea.get("SearchResponse");
+			JSONObject img= (JSONObject) sr.get("Image");
+			JSONArray rs= (JSONArray) img.get("Results");
+			JSONObject r = (JSONObject) rs.get(0);
+			JSONObject t= (JSONObject) r.get("Thumbnail");
+			return t.getString("Url");
+			
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+		
 			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+			return "bkb";
 		}
-		return builder.toString();
+			
 	}
+	
+
 }

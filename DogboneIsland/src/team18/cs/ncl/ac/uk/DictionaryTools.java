@@ -142,8 +142,7 @@ public class DictionaryTools extends Application {
     public static String ReadWebStream(String url) {
     	StringBuilder builder = new StringBuilder();
 		HttpClient client = new DefaultHttpClient();
-		HttpGet httpGet = new HttpGet(
-				url);
+		HttpGet httpGet = new HttpGet(url);
 		try {
 			HttpResponse response = client.execute(httpGet);
 			StatusLine statusLine = response.getStatusLine();

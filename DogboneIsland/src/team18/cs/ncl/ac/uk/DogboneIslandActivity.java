@@ -84,15 +84,15 @@ public class DogboneIslandActivity extends Activity {
         userImage= (ImageView) DogboneIslandActivity.this.findViewById(R.id.UserImage);
 	
         //buttons and shit
-        final Button fbLoginbutton = (Button) findViewById(R.id.button1);
+        final Button hangyManButton = (Button) findViewById(R.id.hangManbutton);
+        final Button flButton = (Button) findViewById(R.id.flashCardButton);
+        
         System.out.print("create dictionary and download");
          DictionaryTools t = new DictionaryTools();
         t.DownloadDictionaryToLocal();
     	
-        fbLoginbutton.setOnClickListener(new View.OnClickListener() {
-        	
-        	
-		@Override
+        hangyManButton.setOnClickListener(new View.OnClickListener() {
+     		@Override
 		    public void onClick(View v) {
 		    // TODO Auto-generated method stub
 		    firstText.setText("Yer booty awaits!");
@@ -102,7 +102,18 @@ public class DogboneIslandActivity extends Activity {
 		    
 		}
 	    });
-        
+        // Jamie this is your bitch
+        flButton.setOnClickListener(new View.OnClickListener() {
+     		@Override
+		    public void onClick(View v) {
+		    // TODO Auto-generated method stub
+		    firstText.setText("Yer booty awaits!");
+		    Intent intent =
+			new Intent(team18.cs.ncl.ac.uk.DogboneIslandActivity.this, team18.cs.ncl.ac.uk.HangManActivity.class);
+		    startActivity(intent);
+		    
+		}
+	    });
         
 	//        Facebook Stuff
         FbRelatedStuff.facebook.authorize(this, new DialogListener() {

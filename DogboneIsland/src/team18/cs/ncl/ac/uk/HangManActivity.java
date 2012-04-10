@@ -151,7 +151,7 @@ public class HangManActivity extends Activity implements OnClickListener
    public void ShowReminder()
    {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage(wordDefPair.Definition)
+		builder.setMessage(wordDefPair.Definition+ FlashCardTools.getImageUrlForWord(wordDefPair.Definition))
 		    .setCancelable(true);
 		AlertDialog alert = builder.create();
 		alert.show();
@@ -394,7 +394,7 @@ public class HangManActivity extends Activity implements OnClickListener
 		
 	
 	
-	char[] letters= "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+	char[] letters= "abcdefghijklmn–opqrstuvwxyz".toCharArray();
 
 	LinearLayout lt = null;
 	int totalWidth=0;
