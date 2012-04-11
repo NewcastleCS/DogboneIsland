@@ -102,20 +102,19 @@ public class DogboneIslandActivity extends Activity {
 		    
 		}
 	    });
-        // Jamie this is your bitch
+        //Jamie this is your bitch
         flButton.setOnClickListener(new View.OnClickListener() {
      		@Override
 		    public void onClick(View v) {
 		    // TODO Auto-generated method stub
 		    firstText.setText("Yer booty awaits!");
 		    Intent intent =
-			new Intent(team18.cs.ncl.ac.uk.DogboneIslandActivity.this, team18.cs.ncl.ac.uk.HangManActivity.class);
+			new Intent(team18.cs.ncl.ac.uk.DogboneIslandActivity.this, team18.cs.ncl.ac.uk.FlashCards.class);
 		    startActivity(intent);
-		    
 		}
 	    });
         
-	//        Facebook Stuff
+	//Facebook Stuff
         FbRelatedStuff.facebook.authorize(this, new DialogListener() {
 		@Override
 		    public void onComplete(Bundle values) {
