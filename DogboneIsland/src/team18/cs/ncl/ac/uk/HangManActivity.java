@@ -394,7 +394,7 @@ public class HangManActivity extends Activity implements OnClickListener
 		
 	
 	
-	char[] letters= "abcdefghijklmn–opqrstuvwxyz".toCharArray();
+	char[] letters= "abcdefghijklmnï¿½opqrstuvwxyz".toCharArray();
 
 	LinearLayout lt = null;
 	int totalWidth=0;
