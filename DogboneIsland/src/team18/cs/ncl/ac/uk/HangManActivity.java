@@ -151,7 +151,7 @@ public class HangManActivity extends Activity implements OnClickListener
    public void ShowReminder()
    {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage(wordDefPair.Definition+ FlashCardTools.getImageUrlForWord(wordDefPair.Definition))
+		builder.setMessage(wordDefPair.Definition)
 		    .setCancelable(true);
 		AlertDialog alert = builder.create();
 		alert.show();
@@ -275,40 +275,7 @@ public class HangManActivity extends Activity implements OnClickListener
 		word.setText(dashString); 
 			try {
 			DogBoneServer.sendJson(FbRelatedStuff.uid,1,ranWord, 1);
-			  Bundle params = new Bundle();
-			    params.putString("method", "post");
-			    params.putString("query", "/me/newcastleproject:play");
-			    mAsyncRunner.request(params, new RequestListener() {
-					
-					@Override
-					public void onMalformedURLException(MalformedURLException e, Object state) {
-						// TODO Auto-generated method stub
-						
-					}
-					
-					@Override
-					public void onIOException(IOException e, Object state) {
-						// TODO Auto-generated method stub
-						
-					}
-					
-					@Override
-					public void onFileNotFoundException(FileNotFoundException e, Object state) {
-						// TODO Auto-generated method stub
-						
-					}
-					
-					@Override
-					public void onFacebookError(FacebookError e, Object state) {
-						// TODO Auto-generated method stub
-						
-					}
-					
-					@Override
-					public void onComplete(String response, Object state) {
-						System.out.print(response);						
-					}
-				});
+			 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
