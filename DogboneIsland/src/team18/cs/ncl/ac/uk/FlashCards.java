@@ -53,9 +53,18 @@ public class FlashCards extends Activity{
       setContentView(R.layout.flashcards);
       
       rightAnswer = p.Word;
+      
       //Sets up 2 more random wordPairs from server
-      WordPair p2 =t.getRandom();
-      WordPair p3 =t.getRandom();
+      WordPair p2=t.getRandom();
+      WordPair p3=t.getRandom();
+      
+      //Makes sure that each button has a different string
+      while((p2.Word.equals(p.Word))||(p2.Word.equals(p3.Word))){
+    	  p2=t.getRandom();
+      }
+      while((p3.Word.equals(p.Word))||(p3.Word.equals(p2.Word))){
+    	  p3=t.getRandom();
+      }
       
       Button button1=(Button)findViewById(R.id.button1);
       Button button2=(Button)findViewById(R.id.button2);
