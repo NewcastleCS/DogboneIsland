@@ -47,7 +47,7 @@ public class FlashCards extends Activity{
        DictionaryTools t = new DictionaryTools();
        WordPair p = t.getRandom();
        
-      String urlOfWString = FlashCardTools.getImageUrlForWord(p.Word);
+      String urlOfWString = FlashCardTools.getImageUrlForWord(p.Definition);
       getImage(urlOfWString);
       
       setContentView(R.layout.flashcards);
