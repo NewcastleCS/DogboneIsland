@@ -197,7 +197,7 @@ public class FlashCards extends Activity{
 	    		    }
 	    		})
 	        .setNegativeButton("Try Again", new DialogInterface.OnClickListener()
-	    	{ 4
+	    	{
 	    	    public void onClick(DialogInterface dialog, int id)
 	    	    {
 	    		FlashCards.this.finish();
