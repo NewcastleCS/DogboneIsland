@@ -33,15 +33,10 @@ package team18.cs.ncl.ac.uk;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.MalformedURLException;
-
 import org.xml.sax.SAXException;
 
 import com.facebook.android.AsyncFacebookRunner;
-import com.facebook.android.AsyncFacebookRunner.RequestListener;
 import com.facebook.android.Facebook;
-import com.facebook.android.FacebookError;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -274,7 +269,7 @@ public class HangManActivity extends Activity implements OnClickListener
 		    }
 		word.setText(dashString); 
 			try {
-			DogBoneServer.sendJson(FbRelatedStuff.uid,1,ranWord, 1);
+			DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,1,ranWord, 1);
 			 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -323,7 +318,7 @@ public class HangManActivity extends Activity implements OnClickListener
 		displayEndGame(getString(R.string.LostTxt));
 		
 		try {
-			DogBoneServer.sendJson(FbRelatedStuff.uid,1,ranWord, -1);
+			DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,1,ranWord, -1);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

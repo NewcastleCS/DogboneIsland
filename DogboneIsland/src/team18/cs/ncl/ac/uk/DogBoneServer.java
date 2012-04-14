@@ -10,28 +10,56 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicHeader;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.protocol.HTTP;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.os.Looper;
 
 public class DogBoneServer {
 
-	protected static void sendJson(final long User_Id, final int Game_id, final String Caption,final int Win) {
+	protected static void sendUserScoreJson(final long User_Id, final int Game_id, final String Caption,final int Win) {
+		final String Url = "http://ncl.sevki.org/newWin.php";
+		  
+		  final JSONObject json = new JSONObject();
+		   try {
+			json.put("user_id", User_Id);
+			json.put("game_id", Game_id);
+           json.put("caption", Caption);
+           json.put("win", Win);
+		} catch (JSONException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+           
+		  sendJson(json,Url);         
+
+}
+
+	protected static void sendNewUserJson(String Access_Token ) {
       
-		  Thread t = new Thread(){
+			final String Url = "http://ncl.sevki.org/newUser.php";
+		  final JSONObject json = new JSONObject();
+		   try {
+			json.put("access_token", Access_Token);
+       		} catch (JSONException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+           
+		  sendJson(json,Url);         
+
+}
+	private static void sendJson(final JSONObject json, final String Url) {
+		Thread t = new Thread(){
 		        public void run() {
 		                Looper.prepare(); //For Preparing Message Pool for the child Thread
 		                HttpClient client = new DefaultHttpClient();
 		                HttpConnectionParams.setConnectionTimeout(client.getParams(), 10000); //Timeout Limit
 		                HttpResponse response;
-		                JSONObject json = new JSONObject();
 		                try{
-		                    HttpPost post = new HttpPost("http://ncl.sevki.org/newWin.php");
+		                    HttpPost post = new HttpPost(Url);
 		                    //HttpPost post = new HttpPost("http://10.0.2.2:1337");
-		                    json.put("user_id", User_Id);
-		                    json.put("game_id", Game_id);
-		                    json.put("caption", Caption);
-		                    json.put("win", Win);
+		                 
 		                    StringEntity se = new StringEntity(  json.toString());  
 		                    se.setContentEncoding(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
 		                    post.setEntity(se);
@@ -63,7 +91,6 @@ public class DogBoneServer {
 		                Looper.loop(); //Loop in the message queue
 		            }
 		        };
-		        t.start();         
-
-}
+		        t.start();
+	}
 }

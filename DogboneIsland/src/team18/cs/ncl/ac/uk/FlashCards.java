@@ -1,14 +1,8 @@
 package team18.cs.ncl.ac.uk;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.Random;
 
 import com.facebook.android.AsyncFacebookRunner;
-import com.facebook.android.FacebookError;
-import com.facebook.android.AsyncFacebookRunner.RequestListener;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -136,41 +130,8 @@ public class FlashCards extends Activity{
 	 public void correctGuess(String s){
 		 	if(rightAnswer==s){
 		 		try {
-					DogBoneServer.sendJson(FbRelatedStuff.uid,1,rightAnswer, 1);
-					  Bundle params = new Bundle();
-					    params.putString("method", "post");
-					    params.putString("query", "/me/newcastleproject:play");
-					    mAsyncRunner.request(params, new RequestListener() {
-							
-							@Override
-							public void onMalformedURLException(MalformedURLException e, Object state) {
-								// TODO Auto-generated method stub
-								
-							}
-							
-							@Override
-							public void onIOException(IOException e, Object state) {
-								// TODO Auto-generated method stub
-								
-							}
-							
-							@Override
-							public void onFileNotFoundException(FileNotFoundException e, Object state) {
-								// TODO Auto-generated method stub
-								
-							}
-							
-							@Override
-							public void onFacebookError(FacebookError e, Object state) {
-								// TODO Auto-generated method stub
-								
-							}
-							
-							@Override
-							public void onComplete(String response, Object state) {
-								System.out.print(response);						
-							}
-						});
+					DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,2,rightAnswer, 1);
+					
 					    displayEndGame(getString(R.string.WonTxt));
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
@@ -178,7 +139,7 @@ public class FlashCards extends Activity{
 				}
 		 	}else{
 		 		try {
-					DogBoneServer.sendJson(FbRelatedStuff.uid,1, s, -1);
+					DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,2, s, -1);
 					displayEndGame(getString(R.string.LostTxt));
 				} catch (Exception e) {
 					// TODO Auto-generated catch block

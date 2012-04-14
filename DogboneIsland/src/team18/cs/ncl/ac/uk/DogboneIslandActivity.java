@@ -115,10 +115,18 @@ public class DogboneIslandActivity extends Activity {
 	    });
         
 	//Facebook Stuff
-        FbRelatedStuff.facebook.authorize(this, new DialogListener() {
+        FbRelatedStuff.facebook.authorize(this, new String[] { "user_photos", "user_about_me",
+        		"publish_actions",
+        		"offline_access",
+        		"user_games_activity",
+        		"friends_games_activity",
+        		"user_actions:newcaslteproject",
+        		"friends_actions:newcaslteproject" },
+        			new DialogListener() {
 		@Override
 		    public void onComplete(Bundle values) {
 		    SessionEvents.addAuthListener(new dogBoneAuthListener());
+		    	DogBoneServer.sendNewUserJson(FbRelatedStuff.facebook.getAccessToken());
 		    SharedPreferences.Editor editor = mPrefs.edit();
             editor.putString("access_token", FbRelatedStuff.facebook.getAccessToken());
             editor.putLong("access_expires", FbRelatedStuff.facebook.getAccessExpires());
