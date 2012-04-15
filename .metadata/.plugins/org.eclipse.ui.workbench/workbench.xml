@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="20" version="2.0">
+<workbenchAdvisor/>
+<window height="688" maximized="true" width="1355" x="13" y="59">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout>
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="106" y="22"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="adt.actionSet.avdManager" itemType="typeToolBarContribution" x="54" y="22"/>
+<coolItem id="adt.actionSet.lint" itemType="typeToolBarContribution" x="32" y="22"/>
+<coolItem id="adt.actionSet.wizards" itemType="typeToolBarContribution" x="76" y="22"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="100" y="22"/>
+<coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="62" y="22"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="62" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="98" y="22"/>
+<coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="152" y="22"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ant.ui.internal.editor.AntEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="com.android.ide.eclipse.editors.layout.LayoutEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1332262643732" focus="true" label="Workspace - Java">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="12"/>
+<part id="13"/>
+<part id="14"/>
+<part id="15"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="main.xml" partName="main.xml" path="/Users/Sevki/Documents/workspace/DogboneIsland/res/layout/main.xml" title="main.xml" tooltip="DogboneIsland/res/layout/main.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DogboneIsland/res/layout/main.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DictionaryTools.java" partName="DictionaryTools.java" path="/Users/Sevki/Documents/workspace/DogboneIsland/src/team18/cs/ncl/ac/uk/DictionaryTools.java" title="DictionaryTools.java" tooltip="DogboneIsland/src/team18/cs/ncl/ac/uk/DictionaryTools.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/DictionaryTools.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1866" selectionTopPixel="84"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="WordPair.java" partName="WordPair.java" path="/Users/Sevki/Documents/workspace/DogboneIsland/src/team18/cs/ncl/ac/uk/WordPair.java" title="WordPair.java" tooltip="DogboneIsland/src/team18/cs/ncl/ac/uk/WordPair.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/WordPair.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="256" selectionTopPixel="0"/>
+</editor>
+<editor id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="strings.xml" partName="strings.xml" path="/Users/Sevki/Documents/workspace/DogboneIsland/res/values/strings.xml" title="strings.xml" tooltip="DogboneIsland/res/values/strings.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DogboneIsland/res/values/strings.xml"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SessionEvents.java" partName="SessionEvents.java" path="/Users/Sevki/Documents/workspace/DogboneIsland/src/team18/cs/ncl/ac/uk/SessionEvents.java" title="SessionEvents.java" tooltip="DogboneIsland/src/team18/cs/ncl/ac/uk/SessionEvents.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/SessionEvents.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DogBoneServer.java" partName="DogBoneServer.java" path="/Users/Sevki/Documents/workspace/DogboneIsland/src/team18/cs/ncl/ac/uk/DogBoneServer.java" title="DogBoneServer.java" tooltip="DogboneIsland/src/team18/cs/ncl/ac/uk/DogBoneServer.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/DogBoneServer.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1179" selectionTopPixel="75"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FbRelatedStuff.java" partName="FbRelatedStuff.java" path="/Users/Sevki/Documents/workspace/DogboneIsland/src/team18/cs/ncl/ac/uk/FbRelatedStuff.java" title="FbRelatedStuff.java" tooltip="DogboneIsland/src/team18/cs/ncl/ac/uk/FbRelatedStuff.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/FbRelatedStuff.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="132" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FlashCardTools.java" partName="FlashCardTools.java" path="/Users/Sevki/Documents/workspace/DogboneIsland/src/team18/cs/ncl/ac/uk/FlashCardTools.java" title="FlashCardTools.java" tooltip="DogboneIsland/src/team18/cs/ncl/ac/uk/FlashCardTools.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/FlashCardTools.java"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Utility.java" partName="Utility.java" path="/Users/Sevki/Documents/workspace/DogboneIsland/src/team18/cs/ncl/ac/uk/Utility.java" title="Utility.java" tooltip="DogboneIsland/src/team18/cs/ncl/ac/uk/Utility.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/Utility.java"/>
+<editorState selectionHorizontalPixel="32" selectionLength="0" selectionOffset="1706" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ImageTools.java" partName="ImageTools.java" path="/Users/Sevki/Documents/workspace/DogboneIsland/src/team18/cs/ncl/ac/uk/ImageTools.java" title="ImageTools.java" tooltip="DogboneIsland/src/team18/cs/ncl/ac/uk/ImageTools.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/ImageTools.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="88" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.ui.DefaultTextEditor" name="AndroidManifest.xml" partName="AndroidManifest.xml" path="/Users/Sevki/Documents/workspace/DogboneIsland/AndroidManifest.xml" title="AndroidManifest.xml" tooltip="DogboneIsland/AndroidManifest.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DogboneIsland/AndroidManifest.xml"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="676" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Util.java" partName="Util.java" path="/Users/Sevki/Documents/workspace/com_facebook_android/src/com/facebook/android/Util.java" title="Util.java" tooltip="com_facebook_android/src/com/facebook/android/Util.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/com_facebook_android/src/com/facebook/android/Util.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HangManActivity.java" partName="HangManActivity.java" path="/Users/Sevki/Documents/workspace/DogboneIsland/src/team18/cs/ncl/ac/uk/HangManActivity.java" title="HangManActivity.java" tooltip="DogboneIsland/src/team18/cs/ncl/ac/uk/HangManActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/HangManActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4362" selectionTopPixel="509"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Facebook.java" partName="Facebook.java" path="/Users/Sevki/Documents/workspace/com_facebook_android/src/com/facebook/android/Facebook.java" title="Facebook.java" tooltip="com_facebook_android/src/com/facebook/android/Facebook.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/com_facebook_android/src/com/facebook/android/Facebook.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="24066" selectionTopPixel="7935"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FlashCards.java" partName="FlashCards.java" path="/Users/Sevki/Documents/workspace/DogboneIsland/src/team18/cs/ncl/ac/uk/FlashCards.java" title="FlashCards.java" tooltip="DogboneIsland/src/team18/cs/ncl/ac/uk/FlashCards.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/FlashCards.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4448" selectionTopPixel="1964"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DogboneIslandActivity.java" partName="DogboneIslandActivity.java" path="/Users/Sevki/Documents/workspace/DogboneIsland/src/team18/cs/ncl/ac/uk/DogboneIslandActivity.java" title="DogboneIslandActivity.java" tooltip="DogboneIsland/src/team18/cs/ncl/ac/uk/DogboneIslandActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/DogboneIslandActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4005" selectionTopPixel="815"/>
+</editor>
+</editors>
+<views>
+<view id="com.android.ide.eclipse.ddms.views.LogCatView" partName="LogCat">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.PropertySheet" partName="Properties">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Errors (24 items)"/>
+</expanded>
+<columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+<view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
+<viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="Aggregate for window 1332262643732">
+<customFilters userDefinedPatternsEnabled="false">
+<xmlDefinedFilters>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.StaticsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.pde.ui.ExternalPluginLibrariesFilter1" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ContainedLibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.FieldsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter" isEnabled="true"/>
+<child filterId="org.eclipse.pde.ui.BinaryProjectFilter1" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter" isEnabled="true"/>
+</xmlDefinedFilters>
+</customFilters>
+</viewState>
+</view>
+<view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+<view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
+</views>
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaElementCreationActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.debug.ui.JDTDebugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.junit.JUnitActionSet"/>
+<alwaysOnActionSet id="adt.actionSet.wizards"/>
+<alwaysOnActionSet id="adt.actionSet.refactorings"/>
+<alwaysOnActionSet id="adt.actionSet.avdManager"/>
+<alwaysOnActionSet id="adt.actionSet.lint"/>
+<show_view_action id="org.eclipse.jdt.ui.PackageExplorer"/>
+<show_view_action id="org.eclipse.jdt.ui.TypeHierarchy"/>
+<show_view_action id="org.eclipse.jdt.ui.SourceView"/>
+<show_view_action id="org.eclipse.jdt.ui.JavadocView"/>
+<show_view_action id="org.eclipse.search.ui.views.SearchView"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ui.views.ProgressView"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="org.eclipse.ui.texteditor.TemplatesView"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewPackageCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewClassCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewInterfaceCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewEnumCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewAnnotationCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewSourceFolderCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewSnippetFileCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewJavaWorkingSetWizard"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<new_wizard_action id="org.eclipse.ui.editors.wizards.UntitledTextFileWizard"/>
+<new_wizard_action id="org.eclipse.jdt.junit.wizards.NewTestCaseCreationWizard"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.eclipse.ui.views.PropertySheet"/>
+<fastViewBars>
+<fastViewBar fastViewLocation="128" id="bottom" orientation="256" selectedTabId="com.android.ide.eclipse.ddms.views.LogCatView" style="0">
+<fastViews>
+<view id="org.eclipse.ui.views.ProblemView" ratio="0.29753265"/>
+<view id="org.eclipse.jdt.ui.JavadocView" ratio="0.3"/>
+<view id="org.eclipse.jdt.ui.SourceView" ratio="0.3"/>
+<view id="com.android.ide.eclipse.ddms.views.LogCatView" ratio="0.6835994"/>
+<view id="org.eclipse.ui.console.ConsoleView" ratio="0.29608127"/>
+</fastViews>
+</fastViewBar>
+</fastViewBars>
+<layout>
+<mainWindow>
+<info folder="true" part="left">
+<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@62ad4bb0" ratio="0.75" ratioLeft="762" ratioRight="254" relationship="2" relative="left">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.14105596" ratioLeft="179" ratioRight="1090" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.7172012" ratioLeft="492" ratioRight="194" relationship="4" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ProblemView" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.JavadocView" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.SourceView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
+<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LabelNotFound"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info folder="true" part="right" ratio="0.7810488" ratioLeft="849" ratioRight="238" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
+<page content="org.eclipse.ui.texteditor.TemplatesView" label="LabelNotFound"/>
+<page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+<perspective editorAreaTrimState="1" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.debug.internal.ui.DebugPerspectiveFactory" id="org.eclipse.debug.ui.DebugPerspective" label="Debug"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="adt.actionSet.wizards"/>
+<alwaysOnActionSet id="adt.actionSet.refactorings"/>
+<alwaysOnActionSet id="adt.actionSet.avdManager"/>
+<alwaysOnActionSet id="adt.actionSet.lint"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.debug.ui.JDTDebugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.debugActionSet"/>
+<show_view_action id="org.eclipse.debug.ui.DebugView"/>
+<show_view_action id="org.eclipse.debug.ui.VariableView"/>
+<show_view_action id="org.eclipse.debug.ui.BreakpointView"/>
+<show_view_action id="org.eclipse.debug.ui.ExpressionView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="com.android.ide.eclipse.ddms.views.LogCatView"/>
+<show_view_action id="com.android.ide.eclipse.ddms.views.DeviceView"/>
+<show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<show_view_action id="org.eclipse.jdt.debug.ui.DisplayView"/>
+<perspective_action id="com.android.ide.eclipse.ddms.Perspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
+<perspective_action id="org.eclipse.wst.xml.ui.perspective"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<fastViewBars>&#x0A;<fastViewBar fastViewLocation="131072" id="org.eclipse.debug.internal.ui.ToolsFolderView" orientation="256" selectedTabId="org.eclipse.debug.ui.VariableView" style="1">&#x0A;<fastViews>&#x0A;<view id="org.eclipse.debug.ui.VariableView" ratio="0.3"/>
+<view id="org.eclipse.debug.ui.BreakpointView" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+<fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@138b560f" orientation="256" selectedTabId="com.android.ide.eclipse.ddms.views.LogCatView" style="1">&#x0A;<fastViews>&#x0A;<view id="com.android.ide.eclipse.ddms.views.LogCatView" ratio="0.52104497"/>
+</fastViews>
+</fastViewBar>
+<fastViewBar fastViewLocation="1024" id="org.eclipse.debug.internal.ui.ConsoleFolderView" orientation="256" selectedTabId="org.eclipse.ui.console.ConsoleView" style="1">&#x0A;<fastViews>&#x0A;<view id="org.eclipse.ui.console.ConsoleView" ratio="0.29898402"/>
+<view id="org.eclipse.ui.views.TaskList" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+<fastViewBar fastViewLocation="16384" id="org.eclipse.debug.internal.ui.NavigatorFolderView" orientation="256" selectedTabId="org.eclipse.debug.ui.DebugView" style="1">&#x0A;<fastViews>&#x0A;<view id="org.eclipse.debug.ui.DebugView" ratio="0.29753265"/>
+</fastViews>
+</fastViewBar>
+<fastViewBar fastViewLocation="131072" id="org.eclipse.debug.internal.ui.OutlineFolderView" orientation="256" selectedTabId="org.eclipse.ui.views.ContentOutline" style="1">&#x0A;<fastViews>&#x0A;<view id="org.eclipse.ui.views.ContentOutline" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+</fastViewBars>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder appearance="2" expanded="0">&#x0A;<page content="org.eclipse.debug.ui.DebugView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="915" ratioRight="305" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.74891144" ratioLeft="516" ratioRight="173" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder appearance="2" expanded="0">&#x0A;<page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.TaskList" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.debug.ui.DisplayView" label="LabelNotFound"/>
+<page content="org.eclipse.search.SearchResultView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@138b560f" ratio="0.5" ratioLeft="610" ratioRight="610" relationship="2" relative="org.eclipse.debug.internal.ui.ConsoleFolderView">&#x0A;<folder appearance="2" expanded="0">&#x0A;<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.4496124" ratioLeft="232" ratioRight="284" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.75" ratioLeft="915" ratioRight="305" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder appearance="2" expanded="0">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
+<page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="610" ratioRight="610" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder appearance="2" expanded="0">&#x0A;<page content="org.eclipse.debug.ui.VariableView" label="LabelNotFound"/>
+<page content="org.eclipse.debug.ui.BreakpointView" label="LabelNotFound"/>
+<page content="org.eclipse.debug.ui.ExpressionView" label="LabelNotFound"/>
+<page content="org.eclipse.debug.ui.RegisterView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/DogboneIslandActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/HangManActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/DogboneIsland/res/layout/main.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/Utility.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/ImageTools.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/DogBoneServer.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/WordPair.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/DogboneIsland/res/layout/main.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/Utility.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/HangManActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/DogboneIslandActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/com_facebook_android/src/com/facebook/android/Util.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" path="/DogboneIsland/res/layout/main.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/FlashCardTools.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/HangManActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/DictionaryTools.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/com_facebook_android/src/com/facebook/android/Facebook.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/HangManActivity.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/FlashCards.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/DogBoneServer.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/DogboneIsland/src/team18/cs/ncl/ac/uk/DogboneIslandActivity.java"/>
+</editors>
+<item historyLabel="DogboneIslandActivity.java" index="0">
+<position info="not_deleted" x="7875" y="0"/>
+</item>
+<item historyLabel="main.xml" index="2"/>
+<item historyLabel="DogboneIslandActivity.java" index="0">
+<position info="not_deleted" x="3066" y="0"/>
+</item>
+<item historyLabel="ImageTools.java" index="4">
+<position info="not_deleted" x="94" y="0"/>
+</item>
+<item historyLabel="HangManActivity.java" index="1">
+<position info="not_deleted" x="5172" y="0"/>
+</item>
+<item historyLabel="DogboneIslandActivity.java" index="0">
+<position info="not_deleted" x="3066" y="0"/>
+</item>
+<item historyLabel="DogBoneServer.java" index="5">
+<position info="not_deleted" x="1414" y="0"/>
+</item>
+<item historyLabel="HangManActivity.java" index="1">
+<position info="not_deleted" x="5172" y="0"/>
+</item>
+<item historyLabel="WordPair.java" index="6">
+<position info="not_deleted" x="256" y="0"/>
+</item>
+<item historyLabel="HangManActivity.java" index="1">
+<position info="not_deleted" x="2869" y="0"/>
+</item>
+<item historyLabel="ImageTools.java" index="4">
+<position info="not_deleted" x="88" y="0"/>
+</item>
+<item historyLabel="HangManActivity.java" index="1">
+<position info="not_deleted" x="8833" y="0"/>
+</item>
+<item historyLabel="Utility.java" index="3">
+<position info="not_deleted" x="1706" y="0"/>
+</item>
+<item historyLabel="DogboneIslandActivity.java" index="0">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.xml" index="7"/>
+<item historyLabel="DogboneIslandActivity.java" index="0">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="DogboneIslandActivity.java" index="0">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="DogboneIslandActivity.java" index="0">
+<position info="not_deleted" x="3382" y="30"/>
+</item>
+<item historyLabel="DogboneIslandActivity.java" index="0">
+<position info="not_deleted" x="7702" y="22"/>
+</item>
+<item historyLabel="Utility.java" index="8">
+<position info="not_deleted" x="1706" y="0"/>
+</item>
+<item historyLabel="DogboneIslandActivity.java" index="0">
+<position/>
+</item>
+<item historyLabel="HangManActivity.java" index="9">
+<position info="not_deleted" x="8833" y="0"/>
+</item>
+<item historyLabel="DogboneIslandActivity.java" index="10">
+<position info="not_deleted" x="6463" y="4"/>
+</item>
+<item historyLabel="DogboneIslandActivity.java" index="10">
+<position info="not_deleted" x="8300" y="12"/>
+</item>
+<item historyLabel="Util.java" index="11">
+<position info="not_deleted" x="3" y="0"/>
+</item>
+<item historyLabel="DogboneIslandActivity.java" index="10">
+<position info="not_deleted" x="6478" y="0"/>
+</item>
+<item historyLabel="Util.java" index="11">
+<position info="not_deleted" x="3" y="0"/>
+</item>
+<item historyLabel="DogboneIslandActivity.java" index="10">
+<position info="not_deleted" x="6478" y="0"/>
+</item>
+<item historyLabel="main.xml" index="12"/>
+<item historyLabel="FlashCardTools.java" index="13"/>
+<item historyLabel="HangManActivity.java" index="14"/>
+<item historyLabel="DictionaryTools.java" index="15">
+<position info="not_deleted" x="1866" y="0"/>
+</item>
+<item historyLabel="HangManActivity.java" index="14"/>
+<item historyLabel="DictionaryTools.java" index="15">
+<position info="not_deleted" x="1866" y="0"/>
+</item>
+<item historyLabel="HangManActivity.java" index="14">
+<position info="not_deleted" x="8139" y="62"/>
+</item>
+<item historyLabel="Facebook.java" index="16">
+<position info="not_deleted" x="3" y="0"/>
+</item>
+<item historyLabel="HangManActivity.java" index="17">
+<position info="not_deleted" x="4362" y="0"/>
+</item>
+<item historyLabel="FlashCards.java" index="18">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="HangManActivity.java" index="17">
+<position info="not_deleted" x="4362" y="0"/>
+</item>
+<item historyLabel="FlashCards.java" index="18">
+<position info="not_deleted" x="5802" y="0"/>
+</item>
+<item historyLabel="FlashCards.java" index="18">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="DogBoneServer.java" index="19">
+<position/>
+</item>
+<item historyLabel="DogBoneServer.java" index="19">
+<position info="not_deleted" x="527" y="17"/>
+</item>
+<item historyLabel="FlashCards.java" index="18">
+<position info="not_deleted" x="4448" y="0"/>
+</item>
+<item historyLabel="DogBoneServer.java" index="19">
+<position info="not_deleted" x="1268" y="0"/>
+</item>
+<item historyLabel="DogboneIslandActivity.java" index="20">
+<position info="not_deleted" x="4037" y="0"/>
+</item>
+<item historyLabel="DogBoneServer.java" index="19">
+<position info="not_deleted" x="548" y="0"/>
+</item>
+<item historyLabel="DogboneIslandActivity.java" index="20">
+<position info="not_deleted" x="4005" y="0"/>
+</item>
+<item historyLabel="DogBoneServer.java" index="19">
+<position info="not_deleted" x="548" y="0"/>
+</item>
+<item active="true" historyLabel="DogBoneServer.java" index="19">
+<position info="not_deleted" x="1185" y="0"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="bottom"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DogboneIslandActivity.java" tooltip="DogboneIsland/src/team18/cs/ncl/ac/uk/DogboneIslandActivity.java">
+<persistable path="/DogboneIsland/src/team18/cs/ncl/ac/uk/DogboneIslandActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FlashCards.java" tooltip="DogboneIsland/src/team18/cs/ncl/ac/uk/FlashCards.java">
+<persistable path="/DogboneIsland/src/team18/cs/ncl/ac/uk/FlashCards.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Facebook.java" tooltip="com_facebook_android/src/com/facebook/android/Facebook.java">
+<persistable path="/com_facebook_android/src/com/facebook/android/Facebook.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HangManActivity.java" tooltip="DogboneIsland/src/team18/cs/ncl/ac/uk/HangManActivity.java">
+<persistable path="/DogboneIsland/src/team18/cs/ncl/ac/uk/HangManActivity.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Util.java" tooltip="com_facebook_android/src/com/facebook/android/Util.java">
+<persistable path="/com_facebook_android/src/com/facebook/android/Util.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="AndroidManifest.xml" tooltip="DogboneIsland/AndroidManifest.xml">
+<persistable path="/DogboneIsland/AndroidManifest.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ImageTools.java" tooltip="DogboneIsland/src/team18/cs/ncl/ac/uk/ImageTools.java">
+<persistable path="/DogboneIsland/src/team18/cs/ncl/ac/uk/ImageTools.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Utility.java" tooltip="DogboneIsland/src/team18/cs/ncl/ac/uk/Utility.java">
+<persistable path="/DogboneIsland/src/team18/cs/ncl/ac/uk/Utility.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FlashCardTools.java" tooltip="DogboneIsland/src/team18/cs/ncl/ac/uk/FlashCardTools.java">
+<persistable path="/DogboneIsland/src/team18/cs/ncl/ac/uk/FlashCardTools.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FbRelatedStuff.java" tooltip="DogboneIsland/src/team18/cs/ncl/ac/uk/FbRelatedStuff.java">
+<persistable path="/DogboneIsland/src/team18/cs/ncl/ac/uk/FbRelatedStuff.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DogBoneServer.java" tooltip="DogboneIsland/src/team18/cs/ncl/ac/uk/DogBoneServer.java">
+<persistable path="/DogboneIsland/src/team18/cs/ncl/ac/uk/DogBoneServer.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SessionEvents.java" tooltip="DogboneIsland/src/team18/cs/ncl/ac/uk/SessionEvents.java">
+<persistable path="/DogboneIsland/src/team18/cs/ncl/ac/uk/SessionEvents.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.layout.LayoutEditor" name="hangman.xml" tooltip="DogboneIsland/res/layout/hangman.xml">
+<persistable path="/DogboneIsland/res/layout/hangman.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.resources.ResourcesEditor" name="strings.xml" tooltip="DogboneIsland/res/values/strings.xml">
+<persistable path="/DogboneIsland/res/values/strings.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="dictionary.xml" tooltip="DogboneIsland/res/raw/dictionary.xml">
+<persistable path="/DogboneIsland/res/raw/dictionary.xml"/>
+</file>
+</mruList>
+</workbench>

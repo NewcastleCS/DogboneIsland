@@ -130,7 +130,7 @@ public class FlashCards extends Activity{
 	 public void correctGuess(String s){
 		 	if(rightAnswer==s){
 		 		try {
-					DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,2,rightAnswer, 1);
+					DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,2,rightAnswer, 1,-1);
 					
 					    displayEndGame(getString(R.string.WonTxt));
 				} catch (Exception e) {
@@ -139,7 +139,7 @@ public class FlashCards extends Activity{
 				}
 		 	}else{
 		 		try {
-					DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,2, s, -1);
+					DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,2, s, -1,-1);
 					displayEndGame(getString(R.string.LostTxt));
 				} catch (Exception e) {
 					// TODO Auto-generated catch block

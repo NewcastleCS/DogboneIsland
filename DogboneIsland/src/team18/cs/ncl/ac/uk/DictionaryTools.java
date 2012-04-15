@@ -25,7 +25,7 @@ import android.os.Environment;
 import android.util.Xml;
 
 public class DictionaryTools extends Application {
-	private  String WEB_PATH = "http://ncl.sevki.org/dictionary.xml";
+	private  String WEB_PATH = "https://raw.github.com/Team18-NewcastleUniversity/resources/master/dictionary.xml";
 	
 	private File ROOT_PATH  = Environment.getExternalStorageDirectory();
 	private  File DICTIONARY_PATH = new File(ROOT_PATH," team18.cs.ncl.ac.uk.dictionary.xml");

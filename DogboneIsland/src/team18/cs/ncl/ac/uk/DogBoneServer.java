@@ -17,7 +17,7 @@ import android.os.Looper;
 
 public class DogBoneServer {
 
-	protected static void sendUserScoreJson(final long User_Id, final int Game_id, final String Caption,final int Win) {
+	protected static void sendUserScoreJson(final long User_Id, final int Game_id, final String Caption,final int Win, final long Duration) {
 		final String Url = "http://ncl.sevki.org/newWin.php";
 		  
 		  final JSONObject json = new JSONObject();
@@ -26,6 +26,7 @@ public class DogBoneServer {
 			json.put("game_id", Game_id);
            json.put("caption", Caption);
            json.put("win", Win);
+           json.put("duration", Duration);
 		} catch (JSONException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

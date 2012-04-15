@@ -45,6 +45,7 @@ public final class R {
         public static final int flashcards=0x7f030000;
         public static final int hangman=0x7f030001;
         public static final int main=0x7f030002;
+        public static final int story=0x7f030003;
     }
     public static final class string {
         public static final int LostTxt=0x7f040004;

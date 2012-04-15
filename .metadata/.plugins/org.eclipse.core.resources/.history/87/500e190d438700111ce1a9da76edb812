@@ -1,0 +1,25 @@
+package team18.cs.ncl.ac.uk;
+
+import java.util.Random;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+
+import com.facebook.android.AsyncFacebookRunner;
+
+public class StoryActivity extends Activity{
+	public ImageView x;
+	public  AsyncFacebookRunner mAsyncRunner=new AsyncFacebookRunner(FbRelatedStuff.facebook);
+	String rightAnswer; //Will hold the correct string answer
+	
+	
+	
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);     
+      setContentView(R.layout.story);
+      }
+	}
