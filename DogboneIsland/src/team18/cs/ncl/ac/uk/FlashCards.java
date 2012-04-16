@@ -20,7 +20,8 @@ public class FlashCards extends Activity{
 	public ImageView x;
 	public  AsyncFacebookRunner mAsyncRunner=new AsyncFacebookRunner(FbRelatedStuff.facebook);
 	String rightAnswer; //Will hold the correct string answer
-	
+    WordPair p ;
+    DictionaryTools t;
 	//Takes the string of the button and compares it to the correct answer
 	private OnClickListener guessListener = new OnClickListener() {
 	    @Override
@@ -36,12 +37,13 @@ public class FlashCards extends Activity{
     	//Random number generator, used to pick a button for the correct answer 
         Random r = new Random();
         int ranNum = r.nextInt(3); //Will generate a random number between 0-2
-       
+       t= new DictionaryTools();
+       p= t.getRandom();
        x=(ImageView)findViewById(R.id.flashcardMainImageView);
-       DictionaryTools t = new DictionaryTools();
-       WordPair p = t.getRandom();
+      
+
        
-      String urlOfWString = FlashCardTools.getImageUrlForWord(p.Definition);
+      String urlOfWString = FlashCardTools.getImageUrlForWord(p.Synonym);
       getImage(urlOfWString);
       
       setContentView(R.layout.flashcards);
@@ -130,7 +132,7 @@ public class FlashCards extends Activity{
 	 public void correctGuess(String s){
 		 	if(rightAnswer==s){
 		 		try {
-					DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,2,rightAnswer, 1,-1);
+					DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,2,p.WordId, 1,-1);
 					
 					    displayEndGame(getString(R.string.WonTxt));
 				} catch (Exception e) {
@@ -139,7 +141,7 @@ public class FlashCards extends Activity{
 				}
 		 	}else{
 		 		try {
-					DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,2, s, -1,-1);
+					DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,2, p.WordId, -1,-1);
 					displayEndGame(getString(R.string.LostTxt));
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
