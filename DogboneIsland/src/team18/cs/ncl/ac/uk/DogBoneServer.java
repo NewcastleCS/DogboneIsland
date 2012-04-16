@@ -17,14 +17,14 @@ import android.os.Looper;
 
 public class DogBoneServer {
 
-	protected static void sendUserScoreJson(final long User_Id, final int Game_id, final String Caption,final int Win, final long Duration) {
+	protected static void sendUserScoreJson(final long User_id, final int Game_id, final int Word_id,final int Win, final long Duration) {
 		final String Url = "http://ncl.sevki.org/newWin.php";
 		  
 		  final JSONObject json = new JSONObject();
 		   try {
-			json.put("user_id", User_Id);
+			json.put("user_id", User_id);
 			json.put("game_id", Game_id);
-           json.put("caption", Caption);
+           json.put("word_id", Word_id);
            json.put("win", Win);
            json.put("duration", Duration);
 		} catch (JSONException e1) {

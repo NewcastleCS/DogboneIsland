@@ -1,3 +1,34 @@
+// FlashCards.java --- 
+// 
+// Filename: FlashCards.java
+// Description: 
+// Author: Jamie McDowell
+// Maintainer: Jamie McDowell
+// Created: Mon Apr 16 22:55:07 2012 (+0100)
+// Version: 
+// Last-Updated: Mon Apr 16 22:58:41 2012 (+0100)
+//           By: Sevki Hasirci
+//     Update #: 1
+// URL: http://ncl.sevki.org
+// Keywords: 
+// Compatibility: 
+// 
+// 
+
+// Commentary: 
+// 
+// 
+// 
+// 
+
+// Change Log:
+// 16-Apr-2012    Sevki Hasirci  
+//    Last-Updated: Mon Apr 16 22:58:41 2012 (+0100) #1 (Sevki Hasirci)
+//    Moved the wordpair to global scope. Bing images are retrieved from p.Synonym
+// 
+// 
+// 
+// 
 package team18.cs.ncl.ac.uk;
 
 import java.util.Random;
