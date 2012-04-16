@@ -6,9 +6,9 @@
 // Maintainer: Team18
 // Created: Sat Mar 24 18:31:54 2012 (+0000)
 // Version: 1
-// Last-Updated: Sat Mar 24 18:32:37 2012 (+0000)
+// Last-Updated: Mon Apr 16 23:00:17 2012 (+0100)
 //           By: Sevki Hasirci
-//     Update #: 1
+//     Update #: 2
 // URL:
 // Keywords: 
 // Compatibility: 
@@ -22,6 +22,9 @@
 // 
 
 // Change Log:
+// 16-Apr-2012    Sevki Hasirci  
+//    Last-Updated: Mon Apr 16 23:00:17 2012 (+0100) #2 (Sevki Hasirci)
+//    updated the game to work with the new win story and facebook postings.
 // 24-Mar-2012    Sevki Hasirci  
 //    Last-Updated: Sat Mar 24 18:32:37 2012 (+0000) #1 (Sevki Hasirci)
 //    Change the button setup
@@ -269,7 +272,7 @@ public class HangManActivity extends Activity implements OnClickListener
 		    }
 		word.setText(dashString); 
 			try {
-			DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,1,ranWord, 1,-1);
+			DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,1,wordDefPair.WordId, 1,-1);
 			 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -318,7 +321,7 @@ public class HangManActivity extends Activity implements OnClickListener
 		displayEndGame(getString(R.string.LostTxt));
 		
 		try {
-			DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,1,ranWord, -1,-1);
+			DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,1,wordDefPair.WordId, -1,-1);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
