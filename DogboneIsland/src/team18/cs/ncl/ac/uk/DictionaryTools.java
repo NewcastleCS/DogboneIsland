@@ -1,6 +1,10 @@
 package team18.cs.ncl.ac.uk;
 
 import java.io.BufferedReader;
+
+import org.json.JSONException;
+import org.json.JSONObject;	
+import org.json.JSONArray;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -22,13 +26,12 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import android.app.Application;
 import android.os.Environment;
-import android.util.Xml;
 
 public class DictionaryTools extends Application {
-	private  String WEB_PATH = "https://raw.github.com/Team18-NewcastleUniversity/resources/master/dictionary.xml";
+	private  String WEB_PATH = "http://ncl.sevki.org/dictionaryJ.php";
 	
 	private File ROOT_PATH  = Environment.getExternalStorageDirectory();
-	private  File DICTIONARY_PATH = new File(ROOT_PATH," team18.cs.ncl.ac.uk.dictionary.xml");
+	private  File DICTIONARY_PATH = new File(ROOT_PATH," team18.cs.ncl.ac.uk.dictionary.json");
 
 
 	boolean inWord = false;
@@ -93,6 +96,35 @@ public class DictionaryTools extends Application {
 		
 			
 	}
+	public boolean ParseJSONDictionary(String json)
+	{
+		System.out.println("starting parsing");
+			try {
+				JSONObject job = new JSONObject(json);
+				JSONArray ja = job.getJSONArray("dictionary");
+				for (int i = 0; i < ja.length(); i++)
+				{
+					WordPair p = new WordPair();
+					
+					JSONObject jo = ja.getJSONObject(i);
+					p.Definition=jo.getString("definition");
+					p.Word=jo.getString("word");
+					p.Synonym=jo.getString("synonym");
+					p.SampleUse=jo.getString("sample_use");
+					p.ImagePath=jo.getString("image_path");
+					p.Difficulty=jo.getInt("difficulty");
+					p.WordId=jo.getInt("word_id");
+					pairs.add(p);
+				}
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+			
+				e.printStackTrace();
+				return false;
+			}
+		return true;
+		
+	}
 	public boolean ReadFromLocal() throws  IOException, SAXException
 	{
 		        FileInputStream fIn;
@@ -105,8 +137,10 @@ public class DictionaryTools extends Application {
 	             sBuffer.append((char)ch);
 	         
 	         System.out.println("now parsing" + sBuffer +"wrote sbuffer");
-	         Xml.parse(sBuffer.toString(), new MyXmlContentHandler());
-	     
+	         // Deprecated, switched to JSON Instead of XML.
+	         // Xml.parse(sBuffer.toString(), new MyXmlContentHandler());
+	         
+	         ParseJSONDictionary(sBuffer.toString());
 	         return false;
 	}
     public Boolean DownloadDictionaryToLocal()
