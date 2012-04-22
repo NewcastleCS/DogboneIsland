@@ -1,7 +1,0 @@
-package team18.cs.ncl.ac.uk;
-
-public class GameChar {
-public int CharID;
-public String CharName;
-public int CharPic;
-}
