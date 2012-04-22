@@ -9,7 +9,7 @@
 // Last-Updated: 
 //           By: 
 //     Update #: 0
-// URL: http://foodforcode.com
+// URL: http://sevki.com
 // Keywords: 
 // Compatibility: 
 // 
@@ -115,13 +115,15 @@ public class DogboneIslandActivity extends Activity {
 	    });
         
 	//Facebook Stuff
-        FbRelatedStuff.facebook.authorize(this, new String[] { "user_photos", "user_about_me",
-        		"publish_actions",
-        		"offline_access",
-        		"user_games_activity",
-        		"friends_games_activity",
-        		"user_actions:newcaslteproject",
-        		"friends_actions:newcaslteproject" },
+        FbRelatedStuff.facebook.authorize(this, new String[] { 
+		"user_photos",
+		"user_about_me",
+		"publish_actions",
+		"offline_access",
+		"user_games_activity",
+		"friends_games_activity",
+		"user_actions:newcaslteproject",
+		"friends_actions:newcaslteproject" },
         			new DialogListener() {
 		@Override
 		    public void onComplete(Bundle values) {

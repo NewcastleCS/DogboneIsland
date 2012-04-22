@@ -36,15 +36,11 @@ package team18.cs.ncl.ac.uk;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import org.xml.sax.SAXException;
-
 import com.facebook.android.AsyncFacebookRunner;
-import com.facebook.android.Facebook;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.View;
@@ -62,10 +58,7 @@ public class HangManActivity extends Activity implements OnClickListener
     public  static TextView word;
     public  String ranWord;
     public ImageView drawing;
-    private SharedPreferences mPrefs;
-    private Facebook facebook;
     String FILENAME = "AndroidSSO_data";
-    private long uid;
     int lives = 7; //Record the number of lives remaining until the hangman image is complete (lives = 0)
     int currentImg = R.drawable.hang1; //The current hangman image refresh
     public static DictionaryTools t = new DictionaryTools();
@@ -101,31 +94,8 @@ public class HangManActivity extends Activity implements OnClickListener
 	this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 	//this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 	
-	mPrefs= getPreferences(MODE_APPEND);
-    uid= mPrefs.getLong("user_id", 0);
-	System.out.println("hugooo"+uid);
-
-    String access_token = mPrefs.getString("access_token", null);
-    long expires = mPrefs.getLong("access_expires", 0);
-   
-    if(access_token != null) {
-    	facebook.setAccessToken(access_token);
-    	
-    	}
-         
-    if(expires != 0) {
-    	facebook.setAccessExpires(expires);
-       }
+		t.ReadDictionary();
 	
-	try {
-		t.ReadFromLocal();
-	} catch (IOException e1) {
-		// TODO Auto-generated catch block
-		e1.printStackTrace();
-	} catch (SAXException e1) {
-		// TODO Auto-generated catch block
-		e1.printStackTrace();
-	}
 		
 	setWidgetReferences();
 		

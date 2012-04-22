@@ -15,7 +15,7 @@ public class FlashCardTools extends Application {
 		
 		SEARCH_PATH +=p;
 		try {
-			JSONObject sea= new JSONObject(DictionaryTools.ReadWebStream(SEARCH_PATH));
+			JSONObject sea= new JSONObject(ResourceTools.ReadWebStream(SEARCH_PATH));
 			JSONObject sr= (JSONObject) sea.get("SearchResponse");
 			JSONObject img= (JSONObject) sr.get("Image");
 			JSONArray rs= (JSONArray) img.get("Results");

@@ -1,3 +1,34 @@
+// DictionaryTools.java --- 
+// 
+// Filename: DictionaryTools.java
+// Description: 
+// Author: Sevki Hasirci
+// Maintainer: Sevki Hasirci
+// Created: Mon Apr 16 22:50:57 2012 (+0100)
+// Version: 
+// Last-Updated: Mon Apr 16 22:51:42 2012 (+0100)
+//           By: Sevki Hasirci
+//     Update #: 2
+// URL: http://sevki.org
+// Keywords: 
+// Compatibility: 
+// 
+// 
+
+// Commentary: 
+// 
+// 
+// 
+// 
+
+// Change Log:
+// 16-Apr-2012    Sevki Hasirci  
+//    Last-Updated: Mon Apr 16 22:51:42 2012 (+0100) #2 (Sevki Hasirci)
+//    Moved the Dictionary file from github to ncl.sevki.org. it is now generated dynamically at ncl.sevki.org/dictionaryJ.php
+// 
+// 
+// 
+// 
 package team18.cs.ncl.ac.uk;
 
 import java.io.InputStream;
