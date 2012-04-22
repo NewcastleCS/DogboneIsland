@@ -86,6 +86,7 @@ public class DogboneIslandActivity extends Activity {
         //buttons and shit
         final Button hangyManButton = (Button) findViewById(R.id.hangManbutton);
         final Button flButton = (Button) findViewById(R.id.flashCardButton);
+        final Button anagramButton = (Button) findViewById(R.id.anagramButton);
         
         System.out.print("create dictionary and download");
          DictionaryTools t = new DictionaryTools();
@@ -114,6 +115,17 @@ public class DogboneIslandActivity extends Activity {
 		}
 	    });
         
+    //Jamie this is your bitch
+    anagramButton.setOnClickListener(new View.OnClickListener() {
+ 		@Override
+	    public void onClick(View v) {
+	    // TODO Auto-generated method stub
+	    firstText.setText("Yer booty awaits!");
+	    Intent intent =
+		new Intent(team18.cs.ncl.ac.uk.DogboneIslandActivity.this, team18.cs.ncl.ac.uk.WordShuffleAppActivity.class);
+	    startActivity(intent);
+	}
+    });        
 	//Facebook Stuff
         FbRelatedStuff.facebook.authorize(this, new String[] { "user_photos", "user_about_me",
         		"publish_actions",

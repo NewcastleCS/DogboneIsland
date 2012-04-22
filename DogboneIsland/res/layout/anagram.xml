@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout
+	android:id="@+id/widget0"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+    
+<ImageView
+    android:id="@+id/imageView2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_x="2dp"
+    android:layout_y="2dp"
+    android:src="@drawable/background" />
+
+<TextView
+	android:id="@+id/wordJumbled"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="[ScrambledWord]"
+	android:textSize="30sp"
+	android:layout_x="26dp"
+	    android:textColor="#000000"  
+	android:layout_y="51dp" /> 
+
+<ImageView
+    android:id="@+id/imageView1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_x="2dp"
+    android:layout_y="215dp"
+    android:src="@drawable/piratenew" />
+
+<TextView
+    android:id="@+id/livesRemaining"
+    android:layout_width="177px"
+    android:layout_height="55dp"
+    android:layout_x="190dp"
+    android:layout_y="320dp"
+    android:text="remainingGuesses"
+    android:textColor="#000000" />
+
+<EditText
+    android:id="@+id/wordGuess"
+    android:layout_width="185dp"
+    android:layout_height="wrap_content"
+    android:layout_x="11dp"
+    android:layout_y="108dp"
+    android:textSize="18sp" />
+
+<Button
+    android:id="@+id/Check"
+    android:layout_width="98dp"
+    android:layout_height="wrap_content"
+    android:layout_x="212dp"
+    android:layout_y="110dp"
+    android:text="check" />
+
+<Button
+    android:id="@+id/hint"
+    android:layout_width="66dp"
+    android:layout_height="wrap_content"
+    android:layout_x="232dp"
+    android:layout_y="416dp"
+    android:text="Hint" />
+
+</AbsoluteLayout>
