@@ -1,0 +1,9 @@
+import java.util.LinkedList;
+
+
+public class Chapter {
+	public int id;
+		public String Name;
+		public int SetIn;
+		LinkedList<GameChar> Characters;
+}

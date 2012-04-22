@@ -1,0 +1,7 @@
+package team18.cs.ncl.ac.uk;
+
+public class Speech {
+public int From;
+public int Speech;
+
+}

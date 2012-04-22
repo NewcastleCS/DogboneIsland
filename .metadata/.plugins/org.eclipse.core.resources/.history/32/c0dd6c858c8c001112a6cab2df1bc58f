@@ -1,0 +1,43 @@
+package team18.cs.ncl.ac.uk;
+import java.util.Iterator;
+import java.util.LinkedList;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+
+
+public class Chapter {
+		private int id;
+		private String Name;
+		private int SetIn;
+		private LinkedList<GameChar> Characters;
+		private LinkedList<Speech> Dialog;
+		private Iterator<Speech> SpeechIterator;
+		private int NextAction;
+		private Object nextActionParams;
+		
+		Chapter(String json)
+		{
+			JSONObject thisChapter;
+				try {
+						thisChapter = new JSONObject(json);
+						id =thisChapter.getInt("id");
+						Name = thisChapter.getString("name");
+						SetIn= thisChapter.getInt("SetIn");
+						JSONArray chars = thisChapter.getJSONArray("characters");
+						for(int i =0; i<chars.length();i++)
+						{
+							Characters.add(new GameChar(chars.toString()));
+						}
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
+				
+			SpeechIterator=Dialog.iterator();
+			
+		}
+}

@@ -55,7 +55,13 @@
 			android:layout_marginRight="10dip"
             android:layout_height="wrap_content"
             android:text="Play Flash Card!" />
-
+              <Button
+            android:id="@+id/anagramButton"
+            android:layout_width="fill_parent"
+			android:layout_marginLeft="10dip"
+			android:layout_marginRight="10dip"
+            android:layout_height="wrap_content"
+            android:text="Play Anagram!" />
 
     </LinearLayout>
 

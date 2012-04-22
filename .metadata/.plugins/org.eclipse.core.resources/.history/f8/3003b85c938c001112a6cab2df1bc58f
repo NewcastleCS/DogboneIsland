@@ -1,0 +1,34 @@
+package team18.cs.ncl.ac.uk;
+
+import java.util.Dictionary;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class Speech {
+
+	public int From;
+	public String Speech;
+	
+	public Speech(String json)
+	{
+		try {
+			DictionaryTools t =new DictionaryTools();
+			WordPair p = t.getRandom();
+			JSONObject j = new JSONObject(json);
+			From = j.getInt("from");
+			Speech=j.getString("speech");
+			Speech.replaceAll("{ranword}", p.Word);
+			Speech.replaceAll("{definition}", p.Definition);
+			Speech.replaceAll("{sampleuse}", p.SampleUse);
+			Speech.replaceAll("{synonym}", p.Synonym);
+			
+			
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+		}
+		
+	}
+}

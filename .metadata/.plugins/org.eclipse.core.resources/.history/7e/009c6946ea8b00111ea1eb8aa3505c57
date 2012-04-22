@@ -1,0 +1,15 @@
+package team18.cs.ncl.ac.uk;
+import java.util.LinkedList;
+
+
+
+public class Chapter {
+		private static int id;
+		private static String Name;
+		private static int SetIn;
+		private static LinkedList<GameChar> Characters;
+		private static LinkedList<Speech> Dialog;
+		private static int NextAction;
+		private static Object nextActionParams;
+		
+}

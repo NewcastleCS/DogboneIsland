@@ -1,0 +1,21 @@
+package team18.cs.ncl.ac.uk;
+import java.util.Iterator;
+import java.util.LinkedList;
+
+
+
+public class Chapter {
+		private int id;
+		private String Name;
+		private int SetIn;
+		private LinkedList<GameChar> Characters;
+		private LinkedList<Speech> Dialog;
+		private Iterator<Speech> SpeechIterator;
+		private int NextAction;
+		private Object nextActionParams;
+		
+		Chapter()
+		{
+			SpeechIterator=Dialog.iterator();
+		}
+}

@@ -1,0 +1,37 @@
+package team18.cs.ncl.ac.uk;
+
+import java.util.Dictionary;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class Speech {
+
+	public int From;
+	public String Speech;
+	
+	public Speech(String json)
+	{
+		try {
+			DictionaryTools t =new DictionaryTools();
+			WordPair p = t.getRandom();
+			JSONObject j = new JSONObject(json);
+			From = j.getInt("from");
+			Speech=j.getString("speech");
+			Speech.replaceAll("{word:ranword}", p.Word);
+			Speech.replaceAll("{word:definition}", p.Definition);
+			Speech.replaceAll("{word:sampleuse}", p.SampleUse);
+			Speech.replaceAll("{word:synonym}", p.Synonym);
+			Speech.replaceAll("{characther:name}", FbRelatedStuff.Name);
+			Speech.replaceAll("{characther:lastname}", FbRelatedStuff.LastName);
+			Speech.replaceAll("{characther:firstname}", FbRelatedStuff.FirstName);
+			Speech.replaceAll("{characther:pronoun}", FbRelatedStuff.Name);
+			
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+		}
+		
+	}
+}
