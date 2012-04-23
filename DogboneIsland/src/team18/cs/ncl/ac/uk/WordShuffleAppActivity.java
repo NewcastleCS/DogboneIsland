@@ -26,8 +26,8 @@ public class WordShuffleAppActivity extends Activity implements OnClickListener
 	public static String guessForButton = "";
 
 	public static String randomWordFromList;
-	public static int livesLeft = 3;
-	public static int ranNum;
+	public  int livesLeft = 3;
+	public  int ranNum;
 
 	/** Called when the activity is first created. */
 	@Override
