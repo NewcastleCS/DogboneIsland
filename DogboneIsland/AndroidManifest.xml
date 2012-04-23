@@ -24,7 +24,6 @@
         <activity android:name=".HangManActivity" />
         <activity android:name=".FlashCards" />
         <activity android:name=".WordShuffleAppActivity" />
-		  <activity android:name=".StoryActivity" />
         </application>
 <uses-permission android:name="android.permission.INTERNET"/>
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
