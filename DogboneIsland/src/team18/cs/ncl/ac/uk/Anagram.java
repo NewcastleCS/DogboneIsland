@@ -16,7 +16,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-public class WordShuffleAppActivity extends Activity implements OnClickListener
+public class Anagram extends Activity implements OnClickListener
 {
 	private Button guess, hint;
 	public static TextView userGuess, ranWord, lives;
@@ -26,9 +26,9 @@ public class WordShuffleAppActivity extends Activity implements OnClickListener
     
 	public static String guessForButton = "";
 
-	public static String randomWordFromList;
-	public  int livesLeft = 3;
-	public  int ranNum;
+	public String randomWordFromList;
+	public int livesLeft = 3;
+	public int ranNum;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -144,8 +144,7 @@ public class WordShuffleAppActivity extends Activity implements OnClickListener
 
 		if(word.equals(randomWordFromList.toLowerCase()))
 		{
-			lives.setText("You have Won!"); 
-			youWon("You have Won!");
+			youWon("You have won!");
 		}
 
 		if(!word.equals(randomWordFromList))
@@ -160,50 +159,54 @@ public class WordShuffleAppActivity extends Activity implements OnClickListener
 		} 
 
 	}
-
-	public void youWon(String Text)
+	
+	public void youWon(String text)
 	{
-		try {
-			DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,3,wordDefPair.WordId, 1,-1);
 
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-	    builder.setMessage(Text)
-	        .setCancelable(false)
-	        .setPositiveButton("Main Menu", new DialogInterface.OnClickListener() {
-	    	    public void onClick(DialogInterface dialog, int id)
-	    	    {	 
-	        	WordShuffleAppActivity.this.finish();
-	    			Intent intent =
-	    		    new Intent(team18.cs.ncl.ac.uk.WordShuffleAppActivity.this, team18.cs.ncl.ac.uk.DogboneIslandActivity.class);
-	    			startActivity(intent);			
-	    		    }
-	    		})
-	        .setNegativeButton("Try Again", new DialogInterface.OnClickListener()
-	    	{
-	    	    public void onClick(DialogInterface dialog, int id)
-	    	    {
-	    	    	WordShuffleAppActivity.this.finish();
-	    		Intent intent =
-	    		    new Intent(team18.cs.ncl.ac.uk.WordShuffleAppActivity.this, team18.cs.ncl.ac.uk.WordShuffleAppActivity.class);
-	    		startActivity(intent);				
-	    		    }
-	    		});
-	    	AlertDialog alert = builder.create();
-	    	alert.show();
-	    
+	lives.setText(text); 
+	try {
+	DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,3,wordDefPair.WordId, 1,-1);
+	
+	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+	builder.setMessage(text)
+	    .setCancelable(false)
+	    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+		    public void onClick(DialogInterface dialog, int id)
+		    {	
+		    	Anagram.this.finish();
+				Intent intent =
+			    new Intent(team18.cs.ncl.ac.uk.Anagram.this, team18.cs.ncl.ac.uk.Anagram.class);
+			startActivity(intent);
+						
+		    }
+		})
+	    .setNegativeButton("Exit", new DialogInterface.OnClickListener()
+		{ 
+		    public void onClick(DialogInterface dialog, int id)
+		    {
+		    	Anagram.this.finish();
+			Intent intent =
+			    new Intent(team18.cs.ncl.ac.uk.Anagram.this, team18.cs.ncl.ac.uk.Anagram.class);
+			startActivity(intent);
+					
+		    }
+		});
+	AlertDialog alert = builder.create();
+	alert.show();
+
+	 
+} catch (Exception e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
 	}
-
-	public  WordPair getWord() throws FileNotFoundException, InterruptedException
-	{
-
-		WordPair p=	t.getRandom();
-		return p;
-	} 	
+	
+    public  WordPair getWord() throws FileNotFoundException, InterruptedException
+    {
+    	
+    	WordPair p=	t.getRandom();
+    	return p;
+    } 	
 
 	public void onClick(View aArg0)
 	{

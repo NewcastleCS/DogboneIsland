@@ -41,13 +41,6 @@
         </RelativeLayout>
 
         <Button
-            android:id="@+id/storyModebutton"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dip"
-            android:layout_marginRight="10dip"
-            android:text="Start Story Mode!" />
-        <Button
             android:id="@+id/hangManbutton"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

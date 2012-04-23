@@ -78,7 +78,7 @@ public class DogboneIslandActivity extends Activity {
             
         }
         if(expires != 0) {
-	    FbRelatedStuff.facebook.setAccessExpires(expires);
+        	FbRelatedStuff.facebook.setAccessExpires(expires);
         }
         firstText =  (TextView) DogboneIslandActivity.this.findViewById(R.id.textView1);
         userImage= (ImageView) DogboneIslandActivity.this.findViewById(R.id.UserImage);
@@ -87,13 +87,10 @@ public class DogboneIslandActivity extends Activity {
         final Button hangyManButton = (Button) findViewById(R.id.hangManbutton);
         final Button flButton = (Button) findViewById(R.id.flashCardButton);
         final Button anagramButton = (Button) findViewById(R.id.anagramButton);
-        final Button storyModeButton = (Button) findViewById(R.id.storyModebutton);
-         
+        
         System.out.print("create dictionary and download");
-	DictionaryTools t = new DictionaryTools();
+         DictionaryTools t = new DictionaryTools();
         t.DownloadDictionaryToLocal();
-        StoryTools st = new StoryTools();
-        st.DownloadStoryToLocal();
     	
         hangyManButton.setOnClickListener(new View.OnClickListener() {
      		@Override
@@ -118,30 +115,17 @@ public class DogboneIslandActivity extends Activity {
 		}
 	    });
         
-	//Andy this is your bitch
-        anagramButton.setOnClickListener(new View.OnClickListener() {
-     		@Override
-		    public void onClick(View v) {
-		    // TODO Auto-generated method stub
-		    firstText.setText("Yer booty awaits!");
-		    Intent intent =
-			new Intent(team18.cs.ncl.ac.uk.DogboneIslandActivity.this, team18.cs.ncl.ac.uk.WordShuffleAppActivity.class);
-		    startActivity(intent);
-		}
-	    });   
-        storyModeButton.setOnClickListener(new View.OnClickListener() {
-     		@Override
-		    public void onClick(View v) {
-		    // TODO Auto-generated method stub
-		    firstText.setText("Avast, me hearties!");
-		    
-		    Intent intent =
-			new Intent(team18.cs.ncl.ac.uk.DogboneIslandActivity.this, team18.cs.ncl.ac.uk.StoryActivity.class);
-		    startActivity(intent);
-		    
-		}
-	    });   
-    
+    //Jamie this is your bitch
+    anagramButton.setOnClickListener(new View.OnClickListener() {
+ 		@Override
+	    public void onClick(View v) {
+	    // TODO Auto-generated method stub
+	    firstText.setText("Yer booty awaits!");
+	    Intent intent =
+		new Intent(team18.cs.ncl.ac.uk.DogboneIslandActivity.this, team18.cs.ncl.ac.uk.WordShuffleAppActivity.class);
+	    startActivity(intent);
+	}
+    });        
 	//Facebook Stuff
         FbRelatedStuff.facebook.authorize(this, new String[] { 
 		"user_photos",
@@ -152,16 +136,16 @@ public class DogboneIslandActivity extends Activity {
 		"friends_games_activity",
 		"user_actions:newcaslteproject",
 		"friends_actions:newcaslteproject" },
-	    new DialogListener() {
+        			new DialogListener() {
 		@Override
 		    public void onComplete(Bundle values) {
 		    SessionEvents.addAuthListener(new dogBoneAuthListener());
-		    DogBoneServer.sendNewUserJson(FbRelatedStuff.facebook.getAccessToken());
+		    	DogBoneServer.sendNewUserJson(FbRelatedStuff.facebook.getAccessToken());
 		    SharedPreferences.Editor editor = mPrefs.edit();
-		    editor.putString("access_token", FbRelatedStuff.facebook.getAccessToken());
-		    editor.putLong("access_expires", FbRelatedStuff.facebook.getAccessExpires());
+            editor.putString("access_token", FbRelatedStuff.facebook.getAccessToken());
+            editor.putLong("access_expires", FbRelatedStuff.facebook.getAccessExpires());
             
-		    editor.commit();
+            editor.commit();
 		    mAsyncRunner.request("me", new meRequestListener());
 		    Bundle params = new Bundle();
 		    params.putString("method", "fql.query");
@@ -237,29 +221,13 @@ public class DogboneIslandActivity extends Activity {
                 // process the response here: executed in background thread
                 Log.d("Facebook-Example", "Response: " + response.toString());
                 JSONObject json = Util.parseJson(response);
-                
-                //get users info and save them to fbrelatedstuff.
                 final String firstName = json.getString("first_name");
-                final String lastName = json.getString("last_name");
-                final String name = json.getString("name");
-                final String gender = json.getString("gender");
-                
-                
-                FbRelatedStuff.FirstName= firstName;
-                FbRelatedStuff.LastName = lastName;
-                FbRelatedStuff.Name = name;	
-                
-                FbRelatedStuff.Gender = team18.cs.ncl.ac.uk.FbRelatedStuff.gender.female;
-                if(gender =="male")
-                	FbRelatedStuff.Gender = team18.cs.ncl.ac.uk.FbRelatedStuff.gender.male;
-                
-                
                 final long uid = json.getLong("id");
-                // then post the processed result back to the UI thread
+		// then post the processed result back to the UI thread
                 // if we do not do this, an runtime exception will be generated
                 // e.g. "CalledFromWrongThreadException: Only the original
                 // thread that created a view hierarchy can touch its views."
-		FbRelatedStuff.uid=uid;
+               FbRelatedStuff.uid=uid;
 		DogboneIslandActivity.this.runOnUiThread(new Runnable() {
 			public void run() {
 			    firstText.setText("Ahoy there " + firstName + "!");

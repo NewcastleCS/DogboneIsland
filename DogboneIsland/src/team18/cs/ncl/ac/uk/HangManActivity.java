@@ -54,7 +54,6 @@ import android.view.View.OnClickListener;
 
 public class HangManActivity extends Activity implements OnClickListener
 {
-	public  AsyncFacebookRunner mAsyncRunner=new AsyncFacebookRunner(FbRelatedStuff.facebook);	
     public  static TextView word;
     public  String ranWord;
     public ImageView drawing;
