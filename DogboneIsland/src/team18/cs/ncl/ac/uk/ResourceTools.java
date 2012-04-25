@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.StringReader;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -28,9 +29,9 @@ public class ResourceTools {
 				if (!f.exists()) {
 					f.createNewFile();
 				}
-				System.out.print("about to write"+reString);
+				System.out.print("about to write"+Url);
 			FileOutputStream fos = new FileOutputStream(Path);
-			fos.write(reString.getBytes());
+			fos.write(reString.getBytes("UTF-8"));
 			System.out.print("wrote"+reString);
 
 			fos.close();
@@ -61,7 +62,7 @@ public class ResourceTools {
 				HttpEntity entity = response.getEntity();
 				InputStream content = entity.getContent();
 				BufferedReader reader = new BufferedReader(
-						new InputStreamReader(content));
+						new InputStreamReader(content, "UTF-8"));
 				String line;
 				while ((line = reader.readLine()) != null) {
 					builder.append(line);
@@ -80,7 +81,9 @@ public class ResourceTools {
 		        FileInputStream fIn;
 		        System.out.println("now opening");
 	         fIn = new FileInputStream(Path);
+	         
 	         StringBuffer sBuffer = new StringBuffer("");
+	         
 	         int ch;
 	         System.out.println("now reading");
 	         while( (ch = fIn.read()) != -1)

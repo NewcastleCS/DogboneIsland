@@ -3,12 +3,12 @@
 // Filename: FlashCards.java
 // Description: 
 // Author: Jamie McDowell
-// Maintainer: Jamie McDowell
+// Maintainer: Team18
 // Created: Mon Apr 16 22:55:07 2012 (+0100)
 // Version: 
-// Last-Updated: Mon Apr 16 22:58:41 2012 (+0100)
+// Last-Updated: Tue Apr 24 05:32:17 2012 (+0100)
 //           By: Sevki Hasirci
-//     Update #: 1
+//     Update #: 2
 // URL: http://ncl.sevki.org
 // Keywords: 
 // Compatibility: 
@@ -22,6 +22,10 @@
 // 
 
 // Change Log:
+// 24-Apr-2012    Sevki Hasirci  
+//    Last-Updated: Tue Apr 24 05:32:17 2012 (+0100) #2 (Sevki Hasirci)
+//    changed the game ending dialog to be handled by GamesCommon for
+//    compliance with the story mode.
 // 16-Apr-2012    Sevki Hasirci  
 //    Last-Updated: Mon Apr 16 22:58:41 2012 (+0100) #1 (Sevki Hasirci)
 //    Moved the wordpair to global scope. Bing images are retrieved from p.Synonym
@@ -165,15 +169,15 @@ public class FlashCards extends Activity{
 		 		try {
 					DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,2,p.WordId, 1,-1);
 					
-					    displayEndGame(getString(R.string.WonTxt));
+					GamesCommon.displayEndGame(GameStatus.Won, this);
+					  
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 		 	}else{
 		 		try {
-					DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,2, p.WordId, -1,-1);
-					displayEndGame(getString(R.string.LostTxt));
+		 			GamesCommon.displayEndGame(GameStatus.Lost, this);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -185,31 +189,5 @@ public class FlashCards extends Activity{
 	  * Displays the standard win or lose message then shows a dialogue box asking to direct 
 	  * the user back to the main menu or try again at the flash card game.
 	  */
-	private void displayEndGame(String Text) {
-	        
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-	    builder.setMessage(Text)
-	        .setCancelable(false)
-	        .setPositiveButton("Main Menu", new DialogInterface.OnClickListener() {
-	    	    public void onClick(DialogInterface dialog, int id)
-	    	    {	 
-	        	FlashCards.this.finish();
-	    			Intent intent =
-	    		    new Intent(team18.cs.ncl.ac.uk.FlashCards.this, team18.cs.ncl.ac.uk.DogboneIslandActivity.class);
-	    			startActivity(intent);			
-	    		    }
-	    		})
-	        .setNegativeButton("Try Again", new DialogInterface.OnClickListener()
-	    	{
-	    	    public void onClick(DialogInterface dialog, int id)
-	    	    {
-	    		FlashCards.this.finish();
-	    		Intent intent =
-	    		    new Intent(team18.cs.ncl.ac.uk.FlashCards.this, team18.cs.ncl.ac.uk.FlashCards.class);
-	    		startActivity(intent);				
-	    		    }
-	    		});
-	    	AlertDialog alert = builder.create();
-	    	alert.show();
-	    }
+	
 }

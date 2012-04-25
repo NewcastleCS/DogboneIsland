@@ -40,9 +40,13 @@ import org.json.JSONObject;
 import org.json.JSONArray;
 import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 import java.util.LinkedList;
 import java.util.Random;
 import org.xml.sax.SAXException;
+
+import android.R.xml;
 import android.app.Application;
 import android.os.Environment;
 
@@ -84,7 +88,8 @@ public class DictionaryTools extends Application {
 					
 					JSONObject jo = ja.getJSONObject(i);
 					p.Definition=jo.getString("definition");
-					p.Word=jo.getString("word");
+					byte[] a=jo.getString("word").getBytes("UTF-8");
+					p.Word=new String(a,"UTF-8" );
 					p.Synonym=jo.getString("synonym");
 					p.SampleUse=jo.getString("sample_use");
 					p.ImagePath=jo.getString("image_path");
@@ -97,6 +102,9 @@ public class DictionaryTools extends Application {
 			
 				e.printStackTrace();
 				return false;
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		return true;
 		

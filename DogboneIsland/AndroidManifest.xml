@@ -23,7 +23,13 @@
         </activity>
         <activity android:name=".HangManActivity" />
         <activity android:name=".FlashCards" />
-        <activity android:name=".WordShuffleAppActivity" />
+        <activity android:name=".Anagram" />
+		  <activity android:name=".StoryActivity" 
+		    	    android:screenOrientation="landscape"
+            		android:label="@string/app_name" >
+            >
+		      
+		  </activity>
         </application>
 <uses-permission android:name="android.permission.INTERNET"/>
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>

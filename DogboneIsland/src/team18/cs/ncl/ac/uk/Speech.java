@@ -62,15 +62,16 @@ public class Speech {
 			WordPair p = t.getRandom();
 			JSONObject j = new JSONObject(json);
 			From = j.getInt("from");
-			Speech=j.getString("speech");
-			Speech.replaceAll("{word:ranword}", p.Word);
-			Speech.replaceAll("{word:definition}", p.Definition);
-			Speech.replaceAll("{word:sampleuse}", p.SampleUse);
-			Speech.replaceAll("{word:synonym}", p.Synonym);
-			Speech.replaceAll("{character:name}", FbRelatedStuff.Name);
-			Speech.replaceAll("{character:lastname}", FbRelatedStuff.LastName);
-			Speech.replaceAll("{character:firstname}", FbRelatedStuff.FirstName);
-			Speech.replaceAll("{character:pronoun}", pronoun);
+			Speech=j.getString("text");
+			tryAndReplace(Speech, "\\{word:word\\}", p.Word);
+			tryAndReplace(Speech, "\\{word:definition\\}", p.Definition);
+			tryAndReplace(Speech, "\\{word:sampleuse\\}", p.SampleUse);
+			tryAndReplace(Speech, "\\{word:synonym\\}", p.Synonym);
+			tryAndReplace(Speech, "\\{character:name\\}", FbRelatedStuff.Name);
+			tryAndReplace(Speech, "\\{[a-zA-z0-9]*\\}", FbRelatedStuff.FirstName);
+			tryAndReplace(Speech, "\\{character:lastname\\}", FbRelatedStuff.LastName);
+			tryAndReplace(Speech, "\\{character:pronoun\\}", pronoun);
+			
 			
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
@@ -78,5 +79,15 @@ public class Speech {
 			
 		}
 		
+	}
+
+	private void tryAndReplace(String input, String pattern, String value) {
+		// TODO Auto-generated method stub
+		try {
+			input.replaceAll(pattern, value);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 }

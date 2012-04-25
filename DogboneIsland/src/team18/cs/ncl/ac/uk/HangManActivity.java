@@ -6,9 +6,9 @@
 // Maintainer: Team18
 // Created: Sat Mar 24 18:31:54 2012 (+0000)
 // Version: 1
-// Last-Updated: Mon Apr 16 23:00:17 2012 (+0100)
+// Last-Updated: Tue Apr 24 05:33:04 2012 (+0100)
 //           By: Sevki Hasirci
-//     Update #: 2
+//     Update #: 3
 // URL:
 // Keywords: 
 // Compatibility: 
@@ -16,12 +16,16 @@
 // 
 
 // Commentary: 
-// 
+// TODO: Move the facebook and server updates to gamescommon.
 // 
 // 
 // 
 
 // Change Log:
+// 24-Apr-2012    Sevki Hasirci  
+//    Last-Updated: Tue Apr 24 05:33:04 2012 (+0100) #3 (Sevki Hasirci)
+//    changed the game ending dialog to be handled by GamesCommon for
+//    compliance with the story mode.
 // 16-Apr-2012    Sevki Hasirci  
 //    Last-Updated: Mon Apr 16 23:00:17 2012 (+0100) #2 (Sevki Hasirci)
 //    updated the game to work with the new win story and facebook postings.
@@ -61,7 +65,7 @@ public class HangManActivity extends Activity implements OnClickListener
     int lives = 7; //Record the number of lives remaining until the hangman image is complete (lives = 0)
     int currentImg = R.drawable.hang1; //The current hangman image refresh
     public static DictionaryTools t = new DictionaryTools();
-    
+    int NextChapter = -1;
     /* Set the length of the word dash array to the length of the word. This will hold the dashes and correctly guessed
     letters. */
     protected String wordDash[];
@@ -92,8 +96,12 @@ public class HangManActivity extends Activity implements OnClickListener
 	setContentView(R.layout.hangman);
 	this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 	//this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-	
-		t.ReadDictionary();
+	Bundle b = getIntent().getExtras();
+	if(b!=null)
+	{
+		int value = b.getInt("nextChapter");
+	}
+	t.ReadDictionary();
 	
 		
 	setWidgetReferences();
@@ -117,11 +125,8 @@ public class HangManActivity extends Activity implements OnClickListener
     }
    public void ShowReminder()
    {
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage(wordDefPair.Definition)
-		    .setCancelable(true);
-		AlertDialog alert = builder.create();
-		alert.show();
+	   GamesCommon.displayWordHint(wordDefPair, this);
+
 		
    }
     public void setup() throws IOException, InterruptedException
@@ -247,48 +252,21 @@ public class HangManActivity extends Activity implements OnClickListener
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		displayEndGame(getString(R.string.WonTxt));
+			GamesCommon.displayEndGame(GameStatus.Won,  this);
+		//displayEndGame(getString(R.string.WonTxt));
 	
 	    }
     }
 
-    private void displayEndGame(String Text) {
     
-	AlertDialog.Builder builder = new AlertDialog.Builder(this);
-	builder.setMessage(Text)
-	    .setCancelable(false)
-	    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-		    public void onClick(DialogInterface dialog, int id)
-		    {	
-		    	HangManActivity.this.finish();
-				Intent intent =
-			    new Intent(team18.cs.ncl.ac.uk.HangManActivity.this, team18.cs.ncl.ac.uk.HangManActivity.class);
-			startActivity(intent);
-						
-		    }
-		})
-	    .setNegativeButton("Exit", new DialogInterface.OnClickListener()
-		{ 
-		    public void onClick(DialogInterface dialog, int id)
-		    {
-			HangManActivity.this.finish();
-			Intent intent =
-			    new Intent(team18.cs.ncl.ac.uk.HangManActivity.this, team18.cs.ncl.ac.uk.HangManActivity.class);
-			startActivity(intent);
-					
-		    }
-		});
-	AlertDialog alert = builder.create();
-	alert.show();
-    }
 
     private void youLost() {
 	//If the guessCount has decreased to zero then there are no limbs left to be added to the stickman, therefore the game is
 	//Lost.
 	if(lives == 0)
 	    {
-		displayEndGame(getString(R.string.LostTxt));
-		
+		GamesCommon.displayEndGame(GameStatus.Lost,  this);
+
 		try {
 			DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,1,wordDefPair.WordId, -1,-1);
 		} catch (Exception e) {

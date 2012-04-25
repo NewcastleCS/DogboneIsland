@@ -7,9 +7,36 @@
     android:background="@drawable/shippy"> >
 
     <RelativeLayout
-        android:id="@+id/relativeLayout1"
+        android:id="@+id/storyCanvas"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
+
+        <ImageView
+            android:id="@+id/Antogonist"
+            android:layout_width="300px"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/helper" />
+
+        <ImageView
+            android:id="@+id/Protagonist"
+            android:layout_width="300px"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/boy" />
+
+        <TextView
+            android:id="@+id/DialogText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
     </RelativeLayout>
 
 </LinearLayout>

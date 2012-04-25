@@ -11,7 +11,7 @@ public class GameChar {
 				thisChar=new JSONObject(json);
 				CharID = thisChar.getInt("CharID");
 				CharName= thisChar.getString("CharacterName");
-				
+				CharPic = thisChar.getInt("CharacterImage");
 			}
 				catch (JSONException e) {
 				// TODO Auto-generated catch block

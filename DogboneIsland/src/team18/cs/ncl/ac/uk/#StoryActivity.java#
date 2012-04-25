@@ -1,0 +1,66 @@
+// StoryActivity.java --- 
+// 
+// Filename: StoryActivity.java
+// Description: 
+// Author: Sevki Hasirci
+// Maintainer: Sevki Hasirci
+// Created: Mon Apr 23 18:53:11 2012 (+0100)
+// Version: 
+// Last-Updated: 
+//           By: 
+//     Update #: 0
+// URL: http://sevki.org
+// Keywords: 
+// Compatibility: 
+// 
+// 
+
+// Commentary: 
+// 
+// 
+// 
+// 
+
+// Change Log:
+// 
+// 
+// 
+// 
+package team18.cs.ncl.ac.uk;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class StoryActivity extends Activity{
+    
+	
+    // on screen images
+    public ImageView protagonistImage;
+    public ImageView antagonistImage;
+    // text
+    public TextView dialogText;
+
+    // Current chapter That im playing
+    Chapter currChap = StoryTools.chapters.
+
+    public void onCreate(Bundle savedInstanceState) {
+	super.onCreate(savedInstanceState);     
+	setContentView(R.layout.story);
+	
+	//find controls and set them.
+	protagonistImage = (ImageView) findViewById(R.id.Protagonist);
+	antagonistImage = (ImageView) findViewById(R.id.Protagonist);
+	dialogText = (TextView) findViewById(R.id.DialogText);
+	
+	
+
+	
+    }
+    // Set imgages to the characters in the scene
+    public void SetCharImages()
+    {
+    	
+    }
+}

@@ -38,13 +38,13 @@ import org.json.JSONObject;
 
 public class Chapter {
 		private int id;
-		private String Name;
-		private int SetIn;
-		private LinkedList<GameChar> Characters = new LinkedList<GameChar>();
-		private LinkedList<Speech> Dialog =new LinkedList<Speech>();
-		private Iterator<Speech> SpeechIterator;
-		private int NextAction;
-		private Object NextActionParams;
+		public String Name;
+		public int SetIn;
+		public LinkedList<GameChar> Characters = new LinkedList<GameChar>();
+		public LinkedList<Speech> Dialog =new LinkedList<Speech>();
+		public Iterator<Speech> SpeechIterator;
+		public int NextAction;
+		public int NextActionParams;
 		
 		Chapter(String json)
 		{
@@ -66,7 +66,7 @@ public class Chapter {
 							Dialog.add(new Speech(dialog.get(i).toString()));
 						}
 						NextAction = thisChapter.getInt("nextAction");
-						NextActionParams = thisChapter.get("nextActionParams");
+						NextActionParams = thisChapter.getInt("nextActionParams");
 						
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block

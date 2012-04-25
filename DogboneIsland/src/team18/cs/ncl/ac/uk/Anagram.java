@@ -1,3 +1,35 @@
+// Anagram.java --- 
+// 
+// Filename: Anagram.java
+// Description: 
+// Author: Andrew Smith
+// Maintainer: Team18
+// Created: Tue Apr 24 05:29:38 2012 (+0100)
+// Version: 
+// Last-Updated: Tue Apr 24 05:30:42 2012 (+0100)
+//           By: Sevki Hasirci
+//     Update #: 1
+// URL: http://sevki.org
+// Keywords: 
+// Compatibility: 
+// 
+// 
+
+// Commentary: 
+// 
+// 
+// 
+// 
+
+// Change Log:
+// 24-Apr-2012    Sevki Hasirci  
+//    Last-Updated: Tue Apr 24 05:30:42 2012 (+0100) #1 (Sevki Hasirci)
+//    changed the game ending dialog to be handled by GamesCommon for
+//    compliance with the story mode.
+// 
+// 
+// 
+// 
 package team18.cs.ncl.ac.uk;
 
 import java.io.FileNotFoundException;
@@ -58,11 +90,6 @@ public class Anagram extends Activity implements OnClickListener
 
 		lives.setText("You have " + livesLeft + " guesses left"); 
 
-		//Random rand = new Random(); 		
-		//ranNum = rand.nextInt(words.length);
-
-		//randomWordFromList = words[ranNum].toLowerCase();	
-		
 		try {
 			wordDefPair = getWord();
 		} catch (FileNotFoundException e) {
@@ -144,7 +171,8 @@ public class Anagram extends Activity implements OnClickListener
 
 		if(word.equals(randomWordFromList.toLowerCase()))
 		{
-			youWon("You have won!");
+			GamesCommon.displayEndGame(GameStatus.Won, this);
+			
 		}
 
 		if(!word.equals(randomWordFromList))
@@ -155,51 +183,12 @@ public class Anagram extends Activity implements OnClickListener
 
 		if(livesLeft == 0)
 		{				
-			lives.setText("You have lost!");
+			GamesCommon.displayEndGame(GameStatus.Lost, this);
 		} 
 
 	}
 	
-	public void youWon(String text)
-	{
-
-	lives.setText(text); 
-	try {
-	DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,3,wordDefPair.WordId, 1,-1);
 	
-	AlertDialog.Builder builder = new AlertDialog.Builder(this);
-	builder.setMessage(text)
-	    .setCancelable(false)
-	    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-		    public void onClick(DialogInterface dialog, int id)
-		    {	
-		    	Anagram.this.finish();
-				Intent intent =
-			    new Intent(team18.cs.ncl.ac.uk.Anagram.this, team18.cs.ncl.ac.uk.Anagram.class);
-			startActivity(intent);
-						
-		    }
-		})
-	    .setNegativeButton("Exit", new DialogInterface.OnClickListener()
-		{ 
-		    public void onClick(DialogInterface dialog, int id)
-		    {
-		    	Anagram.this.finish();
-			Intent intent =
-			    new Intent(team18.cs.ncl.ac.uk.Anagram.this, team18.cs.ncl.ac.uk.Anagram.class);
-			startActivity(intent);
-					
-		    }
-		});
-	AlertDialog alert = builder.create();
-	alert.show();
-
-	 
-} catch (Exception e) {
-	// TODO Auto-generated catch block
-	e.printStackTrace();
-}
-	}
 	
     public  WordPair getWord() throws FileNotFoundException, InterruptedException
     {
