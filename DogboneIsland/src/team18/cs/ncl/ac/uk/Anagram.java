@@ -75,11 +75,7 @@ public class Anagram extends Activity implements OnClickListener
 
 	   public void ShowReminder()
 	   {
-			AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			builder.setMessage(wordDefPair.Definition)
-			    .setCancelable(true);
-			AlertDialog alert = builder.create();
-			alert.show();
+		   GamesCommon.displayWordHint(wordDefPair, this);
 			
 	   }
 	   
@@ -124,13 +120,14 @@ public class Anagram extends Activity implements OnClickListener
 		});
 
 		hint.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) 
+			public void onClick(View arg0) 
 			{
 				ShowReminder();
+		
 			}
 		});
 
-	}  
+	}
 
 
 	public static String shuffle(String word)

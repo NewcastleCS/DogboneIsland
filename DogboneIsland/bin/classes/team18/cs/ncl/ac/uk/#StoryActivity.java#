@@ -43,7 +43,7 @@ public class StoryActivity extends Activity{
     public TextView dialogText;
 
     // Current chapter That im playing
-    Chapter currChap;
+    Chapter currChap = StoryTools.chapters.
 
     public void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);     
@@ -54,18 +54,13 @@ public class StoryActivity extends Activity{
 	antagonistImage = (ImageView) findViewById(R.id.Protagonist);
 	dialogText = (TextView) findViewById(R.id.DialogText);
 	
-	currChap  = StoryTools.chapters.getFirst();
 	
-	
-    }
-    public void SetChars()
-    {
-	GameChar protagonist=  currChap.Characters.getFirst();
-	GameChar antagonist=   currChap.Characters.getLast();
+
 	
     }
+    // Set imgages to the characters in the scene
     public void SetCharImages()
     {
-	
+    	
     }
 }
