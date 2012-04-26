@@ -6,9 +6,9 @@
 // Maintainer: Team18
 // Created: Sat Mar 24 18:31:54 2012 (+0000)
 // Version: 1
-// Last-Updated: Tue Apr 24 05:33:04 2012 (+0100)
-//           By: Sevki Hasirci
-//     Update #: 3
+// Last-Updated: Tue Apr 26 12:15:04 2012 (+0100)
+//           By: Jamie McDowell
+//     Update #: 4
 // URL:
 // Keywords: 
 // Compatibility: 
@@ -22,6 +22,10 @@
 // 
 
 // Change Log:
+// 26-Apr-2012    Jamie McDowell 
+//    Last-Updated: Tue Apr 26 12:15:04 2012 (+0100) #4 (Jamie McDowell)
+//    Fixed bug where you would complete a game if you chose 1 correct 
+//    letter the amount of times for the length of the word
 // 24-Apr-2012    Sevki Hasirci  
 //    Last-Updated: Tue Apr 24 05:33:04 2012 (+0100) #3 (Sevki Hasirci)
 //    changed the game ending dialog to be handled by GamesCommon for
@@ -55,6 +59,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
+import java.util.Arrays;
 
 public class HangManActivity extends Activity implements OnClickListener
 {
@@ -70,6 +75,8 @@ public class HangManActivity extends Activity implements OnClickListener
     letters. */
     protected String wordDash[];
     protected String wordArr[];
+    protected String[] wordCheck = new String[10]; //Added this array to stop users guessing the same chars
+    
 	protected WordPair wordDefPair;
     protected String dashCollection = ""; //The collection of dashes in the word, e.g. "_ _ _ _"
     protected String dashString = ""; //The concatenated collection of dashes
@@ -101,6 +108,7 @@ public class HangManActivity extends Activity implements OnClickListener
 	{
 		int value = b.getInt("nextChapter");
 	}
+	
 	t.ReadDictionary();
 	
 		
@@ -141,7 +149,7 @@ public class HangManActivity extends Activity implements OnClickListener
 	//Set up the string arrays for the random word's dash representation
 	wordArr = new String[ranWord.length()];
 	wordDash = new String[ranWord.length()];
-
+	Arrays.fill(wordCheck, "0");
 	Button rmndBtn = (Button) findViewById(R.id.rmndBtn);
 	rmndBtn.setOnClickListener(new OnClickListener() {
 		
@@ -200,13 +208,18 @@ public class HangManActivity extends Activity implements OnClickListener
 	//If there the letter guess exists in the actual word, replace the dash with the correct. Increment the correctGuess
 	//by 1. This is used to determine if the user has won the game or not (if the correctGuess = the size of the word array,
 	//then all of the letters have been found.
+	
+	/*Need to add an array of already guessed letters and not count it if they guess the same letter
+	 * Jamie.
+	*/
 	for(int i = 0; i<ranWord.length(); i++)
 	    {
-		if(letter.equals(wordArr[i]))
+		if(letter.equals(wordArr[i])&&(!letter.equals(wordCheck[i])))
 		    {
 			wordDash[i] = letter;
 			found = true;
 			correctGuess++;
+			wordCheck[i]=wordArr[i];
 		    }
 	    } 
 
@@ -348,5 +361,6 @@ public class HangManActivity extends Activity implements OnClickListener
 	}
 
 }
+
 
 
