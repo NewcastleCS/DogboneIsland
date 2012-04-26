@@ -82,7 +82,7 @@ public class DogboneIslandActivity extends Activity {
         }
         firstText =  (TextView) DogboneIslandActivity.this.findViewById(R.id.textView1);
         userImage= (ImageView) DogboneIslandActivity.this.findViewById(R.id.UserImage);
-	
+	firstText.setText("Arrr! Welcome to t' Dogbone Island!!!");
         //buttons and shit
         final Button hangyManButton = (Button) findViewById(R.id.hangManbutton);
         final Button flButton = (Button) findViewById(R.id.flashCardButton);

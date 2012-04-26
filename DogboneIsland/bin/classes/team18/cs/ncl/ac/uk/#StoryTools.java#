@@ -56,7 +56,6 @@ public Boolean DownloadStoryToLocal()
 }
 public static boolean ParseJSONStory(String json)
 {
-
 	System.out.println("starting parsing");
 		try {
 			JSONObject job = new JSONObject(json);
