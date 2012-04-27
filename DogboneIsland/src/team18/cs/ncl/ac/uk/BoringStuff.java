@@ -1,3 +1,33 @@
+// BoringStuff.java --- 
+// 
+// Filename: BoringStuff.java
+// Description: 
+// Author: Sevki Hasirci
+// Maintainer: Sevki Hasirci
+// Created: Fri Apr 27 07:16:25 2012 (+0100)
+// Version: 
+// Last-Updated: 
+//           By: 
+//     Update #: 0
+// URL: http://sevki.org
+// Keywords: 
+// Compatibility: 
+// 
+// 
+
+// Commentary: 
+// Considerably one of the most cunning names that I came up with for a class this is by far the most fun class of all times.
+// Just like notch's minecraft this bea-u-ti-ful class spins trough some array and spits out Welcome messages that are 
+// %100 ripped-off of minecraft title screen. Here is the list of words http://g.sevki.org/KfBRKC 
+// 
+// 
+// 
+
+// Change Log:
+// 
+// 
+// 
+// 
 package team18.cs.ncl.ac.uk;
 
 import java.io.File;
