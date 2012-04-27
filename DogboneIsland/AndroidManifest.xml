@@ -22,6 +22,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".HangManActivity" />
+        <activity android:name=".MenuActivity"       
+            android:screenOrientation="portrait"/>
+
         <activity android:name=".FlashCards" />
         <activity android:name=".Anagram" />
 		  <activity android:name=".StoryActivity" 
