@@ -31,6 +31,8 @@
 // 
 package team18.cs.ncl.ac.uk;
 
+import java.security.PublicKey;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,18 +41,13 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import com.facebook.android.*;
 import com.facebook.android.Facebook.*;
 
 import android.util.Log;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import team18.cs.ncl.ac.uk.SessionEvents.AuthListener;
@@ -68,6 +65,7 @@ public class DogboneIslandActivity extends Activity {
     private static Boolean gotImagePath = false;
     private SharedPreferences mPrefs;
     private ProgressDialog pdialog;
+    public static BoringStuff boringStuff;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,7 +75,7 @@ public class DogboneIslandActivity extends Activity {
     	this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     	this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.login_welcome);
-	
+        
         /*
          * Progressbar
          */
@@ -106,7 +104,9 @@ public class DogboneIslandActivity extends Activity {
         System.out.print("create story and download");
         StoryTools st = new StoryTools();
         st.DownloadStoryToLocal();
-        
+        boringStuff= new BoringStuff();
+        boringStuff.DownloadWelcomesToLocal();
+       
 
     
         //Facebook Stuff

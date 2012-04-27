@@ -28,28 +28,21 @@
 // 
 package team18.cs.ncl.ac.uk;
 
-import org.json.JSONObject;
-
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.opengl.Visibility;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewParent;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.TextView;
 
 public class GamesCommon {
+
 	public static void displayEndGame(GameStatus gs,final Activity li) {
 		
 		//New intent 

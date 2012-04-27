@@ -35,8 +35,22 @@
                 android:layout_alignBottom="@+id/UserImage"
                 android:layout_marginLeft="15dp"
                 android:layout_toRightOf="@+id/UserImage"
-                android:text="Large Text"
+                android:shadowDx="3"
+        		android:shadowDy="3"
+        		android:shadowRadius="0.5"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/main_welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="14dp"
+                android:layout_marginTop="14dp"
+              
+                 android:angle="45"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
 
         </RelativeLayout>
 
@@ -53,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dip"
             android:layout_marginRight="10dip"
-            android:text="Play hangman!" />
+            android:text="Play Hangman!" />
 
         <Button
             android:id="@+id/flashCardButton"

@@ -31,7 +31,10 @@ package team18.cs.ncl.ac.uk;
 import java.util.Iterator;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -108,6 +111,15 @@ public class StoryActivity extends Activity{
 	
 		});
 	}
+	public boolean isOnline() {
+	    ConnectivityManager cm =
+	        (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+	    NetworkInfo netInfo = cm.getActiveNetworkInfo();
+	    if (netInfo != null && netInfo.isConnectedOrConnecting()) {
+	        return true;
+	    }
+	    return false;
+	}
 	private void SayNext() {
 		// TODO Auto-generated method stub
 		if(talkingPoints.hasNext())
@@ -120,7 +132,10 @@ public class StoryActivity extends Activity{
 				intent= new Intent(StoryActivity.this, HangManActivity.class);
 				break;
 			case 2:
-				intent= new Intent(StoryActivity.this, FlashCards.class);
+				if(isOnline())
+					intent= new Intent(StoryActivity.this, FlashCards.class);
+				else
+					intent= new Intent(StoryActivity.this, Anagram.class);
 				break;
 			case 3:
 				intent= new Intent(StoryActivity.this, Anagram.class);

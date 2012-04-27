@@ -1,10 +1,15 @@
 package team18.cs.ncl.ac.uk;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -21,6 +26,11 @@ public class MenuActivity extends Activity {
     public  AsyncFacebookRunner mAsyncRunner=new AsyncFacebookRunner(FbRelatedStuff.facebook);
     private static TextView firstText;
     private static ImageView userImage;
+    TextView WelcomeMsg;
+    BoringStuff boringStuff;
+    AlertDialog alert ;
+    
+    
     @Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,17 +38,30 @@ public class MenuActivity extends Activity {
     	this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
         
-
+         WelcomeMsg=  (TextView) MenuActivity.this.findViewById(R.id.main_welcome);
         firstText =  (TextView) MenuActivity.this.findViewById(R.id.textView1);
         userImage= (ImageView) MenuActivity.this.findViewById(R.id.UserImage);
-        firstText.setText("Arrr! Welcome to t' Dogbone Island!!!");
-        //buttons and shit
+        
+        boringStuff= new BoringStuff();
+        boringStuff.ReadWelcomes();
+      
+        notchify();
 
         final Button hangyManButton = (Button) findViewById(R.id.hangManbutton);
         final Button flButton = (Button) findViewById(R.id.flashCardButton);
         final Button anagramButton = (Button) findViewById(R.id.anagramButton);
         final Button storyModeButton = (Button) findViewById(R.id.storyModebutton);
-         
+        
+        /*
+         * The interwebz is down....
+         * http://g.sevki.org/IBhQS3
+         */
+        AlertDialog.Builder builder;
+        builder = new AlertDialog.Builder(this);
+        builder.setTitle("No internetz");
+        builder.setMessage("When your internetz is bubbye, to keep you warm a facepalm will arrive.");
+        alert =builder.create();
+        
         
         
         hangyManButton.setOnClickListener(new View.OnClickListener() {
@@ -56,7 +79,11 @@ public class MenuActivity extends Activity {
 		    public void onClick(View v) {
 		    Intent intent =
 			new Intent(team18.cs.ncl.ac.uk.MenuActivity.this, team18.cs.ncl.ac.uk.FlashCards.class);
-		    startActivity(intent);
+		    if(isOnline())
+		    	startActivity(intent);
+		    else{
+		    	
+		    	}
 		}
 	    });
         
@@ -95,7 +122,27 @@ public class MenuActivity extends Activity {
         
         }
     
+    /*
+     * Lets get a new welcome message.
+     */
+    @Override
+    protected void onResume(){
+    	super.onResume();
+        notchify();
+    }
     
+    /*
+     * Tell me if I'm online
+     */
+    public boolean isOnline() {
+	    ConnectivityManager cm =
+	        (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+	    NetworkInfo netInfo = cm.getActiveNetworkInfo();
+	    if (netInfo != null && netInfo.isConnectedOrConnecting()) {
+	        return true;
+	    }
+	    return false;
+	}
     
     /*
      * The point of no return!!!
@@ -103,8 +150,13 @@ public class MenuActivity extends Activity {
      */
     @Override
     public void onBackPressed() {
+    	notchify();
        return;
     }
+
+	private void notchify() {
+		WelcomeMsg.setText(Html.fromHtml("<b>"+boringStuff.getRandom()+"</b>"));
+	}
     
     /*
      * Image Puller Start HERE.   HOLDON!!!!!!!!
