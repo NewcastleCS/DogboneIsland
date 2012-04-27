@@ -39,9 +39,6 @@ import java.util.Random;
 
 import com.facebook.android.AsyncFacebookRunner;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -167,9 +164,8 @@ public class FlashCards extends Activity{
 	 public void correctGuess(String s){
 		 	if(rightAnswer==s){
 		 		try {
-					DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,2,p.WordId, 1,-1);
-					
-					GamesCommon.displayEndGame(GameStatus.Won, this);
+						
+					GamesCommon.displayEndGame(GameStatus.Won, this,p);
 					  
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
@@ -177,7 +173,7 @@ public class FlashCards extends Activity{
 				}
 		 	}else{
 		 		try {
-		 			GamesCommon.displayEndGame(GameStatus.Lost, this);
+		 			GamesCommon.displayEndGame(GameStatus.Lost, this,p);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

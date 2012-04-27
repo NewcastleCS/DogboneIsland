@@ -31,8 +31,6 @@
 // 
 package team18.cs.ncl.ac.uk;
 
-import java.security.PublicKey;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

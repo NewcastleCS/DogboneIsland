@@ -63,7 +63,8 @@ public static boolean ParseJSONStory(String json)
 			JSONArray ja = job.getJSONArray("chapters");
 			for (int i = 0; i < ja.length(); i++)
 			{
-				chapters.add(new Chapter(ja.get(i).toString()));
+				JSONObject ji = ja.getJSONObject(i);
+				chapters.add(new Chapter(ji.toString()));
 			}
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block

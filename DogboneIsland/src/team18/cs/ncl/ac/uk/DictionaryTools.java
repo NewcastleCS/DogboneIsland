@@ -41,12 +41,10 @@ import org.json.JSONArray;
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
 import java.util.LinkedList;
 import java.util.Random;
 import org.xml.sax.SAXException;
 
-import android.R.xml;
 import android.app.Application;
 import android.os.Environment;
 

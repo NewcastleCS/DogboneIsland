@@ -59,14 +59,14 @@ public class Speech {
 			JSONObject j = new JSONObject(json);
 			From = j.getInt("from");
 			Speech=j.getString("text");
-			tryAndReplace(Speech, "\\{word:word\\}", p.Word);
-			tryAndReplace(Speech, "\\{word:definition\\}", p.Definition);
-			tryAndReplace(Speech, "\\{word:sampleuse\\}", p.SampleUse);
-			tryAndReplace(Speech, "\\{word:synonym\\}", p.Synonym);
-			tryAndReplace(Speech, "\\{character:name\\}", FbRelatedStuff.Name);
-			tryAndReplace(Speech, "\\{[a-zA-z0-9]*\\}", FbRelatedStuff.FirstName);
-			tryAndReplace(Speech, "\\{character:lastname\\}", FbRelatedStuff.LastName);
-			tryAndReplace(Speech, "\\{character:pronoun\\}", pronoun);
+			Speech =tryAndReplace(Speech, "\u007Bword\u003Aword\u007D", p.Word);
+			Speech =tryAndReplace(Speech, "\u007Bword\u003Adefinition\u007D", p.Definition);
+			Speech =tryAndReplace(Speech, "\u007Bword\u003Asampleuse\u007D", p.SampleUse);
+			Speech =tryAndReplace(Speech, "\u007Bword\u003Asynonym\u007D", p.Synonym);
+			Speech =tryAndReplace(Speech, "\u007Bcharacter\u003Aname\u007D", FbRelatedStuff.Name);
+			Speech =tryAndReplace(Speech, "\u007Bcharacter\u003Afirstname\u007D", FbRelatedStuff.FirstName);
+			Speech =tryAndReplace(Speech, "\u007Bcharacter\u003Alastname\u007D", FbRelatedStuff.LastName);
+			Speech =tryAndReplace(Speech, "\u007Bcharacter\u003Apronoun\u007D", pronoun);
 			
 			
 		} catch (JSONException e) {
@@ -77,13 +77,15 @@ public class Speech {
 		
 	}
 
-	private void tryAndReplace(String input, String pattern, String value) {
+	private String tryAndReplace(String input, String pattern, String value) {
 		// TODO Auto-generated method stub
 		try {
-			input.replaceAll(pattern, value);
+			return input.replace(pattern, value);
 			
 		} catch (Exception e) {
 			// TODO: handle exception
+			e.printStackTrace();
+			return input;
 		}
 	}
 }

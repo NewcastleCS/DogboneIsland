@@ -44,11 +44,7 @@ package team18.cs.ncl.ac.uk;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import com.facebook.android.AsyncFacebookRunner;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.View;
@@ -103,12 +99,7 @@ public class HangManActivity extends Activity implements OnClickListener
 	setContentView(R.layout.hangman);
 	this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 	//this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-	Bundle b = getIntent().getExtras();
-	if(b!=null)
-	    {
-		int value = b.getInt("nextChapter");
-	    }
-	
+
 	t.ReadDictionary();
 	
 		
@@ -260,13 +251,12 @@ public class HangManActivity extends Activity implements OnClickListener
 		    }
 		word.setText(dashString); 
 		try {
-		    DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,1,wordDefPair.WordId, 1,-1);
 			
 		} catch (Exception e) {
 		    // TODO Auto-generated catch block
 		    e.printStackTrace();
 		}
-		GamesCommon.displayEndGame(GameStatus.Won,  this);
+		GamesCommon.displayEndGame(GameStatus.Won,  this,wordDefPair);
 		//displayEndGame(getString(R.string.WonTxt));
 			
 	    }
@@ -279,7 +269,7 @@ public class HangManActivity extends Activity implements OnClickListener
 	//Lost.
 	if(lives == 0)
 	    {
-		GamesCommon.displayEndGame(GameStatus.Lost,  this);
+		GamesCommon.displayEndGame(GameStatus.Lost,  this,wordDefPair);
 		try {
 		    DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,1,wordDefPair.WordId, -1,-1);
 		} catch (Exception e) {
@@ -323,7 +313,10 @@ public class HangManActivity extends Activity implements OnClickListener
 	for(int i = 0; i < letters.length; i++)
 	    {
 		
-		
+		/*
+		 * For some phones and screen resolutions there is just not enough screen
+		 * real estate therefore it wont work... 
+		 */
 		int setWidth= SDK_INT<11? 50:70;
 	
 		if(i==0 || (totalWidth>width))

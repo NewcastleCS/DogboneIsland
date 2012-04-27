@@ -37,7 +37,7 @@ import org.json.JSONObject;
 
 
 public class Chapter {
-		private int id;
+		public int id;
 		public String Name;
 		public int SetIn;
 		public LinkedList<GameChar> Characters = new LinkedList<GameChar>();

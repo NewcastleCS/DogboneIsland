@@ -168,7 +168,7 @@ public class Anagram extends Activity implements OnClickListener
 
 		if(word.equals(randomWordFromList.toLowerCase()))
 		{
-			GamesCommon.displayEndGame(GameStatus.Won, this);
+			GamesCommon.displayEndGame(GameStatus.Won, this,wordDefPair);
 			
 		}
 
@@ -180,7 +180,7 @@ public class Anagram extends Activity implements OnClickListener
 
 		if(livesLeft == 0)
 		{				
-			GamesCommon.displayEndGame(GameStatus.Lost, this);
+			GamesCommon.displayEndGame(GameStatus.Lost, this,wordDefPair);
 		} 
 
 	}

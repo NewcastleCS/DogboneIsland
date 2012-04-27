@@ -76,7 +76,7 @@ public class StoryActivity extends Activity{
 	if(extras !=null)
 	{
 		thisChap = extras.getInt("chapter");
-		currChap  = StoryTools.chapters.get(thisChap);
+		currChap  = StoryTools.chapters.get(thisChap-1);
 	}
 	else
 	{

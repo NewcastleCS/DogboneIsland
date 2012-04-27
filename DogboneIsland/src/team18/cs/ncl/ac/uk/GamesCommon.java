@@ -43,7 +43,7 @@ import android.widget.TextView;
 
 public class GamesCommon {
 
-	public static void displayEndGame(GameStatus gs,final Activity li) {
+	public static void displayEndGame(GameStatus gs,final Activity li,WordPair p) {
 		
 		//New intent 
 	
@@ -102,10 +102,10 @@ public class GamesCommon {
 		
 		if(extras !=null && gs == GameStatus.Won)
 		{
-			NextChap = extras.getInt("nextChapter");
+			int a = extras.getInt("nextChapter");
 			final Intent intent = new Intent(li,StoryActivity.class);
 			Bundle b = new Bundle();
-			b.putInt("chapter", NextChap);
+			b.putInt("chapter", a);
 			intent.putExtras(b);
 			button1.setText("Continue");
 			button1.setOnClickListener(new OnClickListener() {
@@ -134,7 +134,33 @@ public class GamesCommon {
 				}
 			});
 		}
+		
+int gameInt =1;
+	if(li.getClass() == HangManActivity.class)
+	{
+		gameInt = 1;
+	}else if (li.getClass() == FlashCards.class)
+	{
+		gameInt = 2;
+	}else if(li.getClass() == Anagram.class)
+	{
+		gameInt =3;
+	}
+	int won = 0;
+	switch (gs) {
+	case Won:
+		won =1;
+		break;
+	case Lost:
+		won = -1;
+		break;
 
+	default:
+		break;
+	}
+	
+	
+	    DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,gameInt,p.WordId, won,-1);
 		dialog.show();
 		
 	    }

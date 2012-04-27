@@ -75,7 +75,7 @@ public class BoringStuff extends Application {
 	public boolean ParseJSONWelcomes(String json)
 	{
 		System.out.println("starting parsing");
-			String lines[] = json.split("¤");
+			String lines[] = json.split("\u00A7");
 			for (int i = 0; i < lines.length; i++)
 			{
 				String added = lines[i];
