@@ -1,3 +1,31 @@
+// ResourceTools.java --- 
+// 
+// Filename: ResourceTools.java
+// Description: 
+// Author: Sevki Hasirci
+// Maintainer: Sevki Hasirci
+// Created: Fri Apr 27 16:09:07 2012 (+0100)
+// Version: 
+// Last-Updated: 
+//           By: 
+//     Update #: 0
+// URL: http://sevki.org
+// Keywords: 
+// Compatibility: 
+// 
+// 
+
+// Commentary: 
+// Handles all the downloading and I/O operations of the APP
+// 
+// 
+// 
+
+// Change Log:
+// 
+// 
+// 
+// 
 package team18.cs.ncl.ac.uk;
 
 import java.io.BufferedReader;

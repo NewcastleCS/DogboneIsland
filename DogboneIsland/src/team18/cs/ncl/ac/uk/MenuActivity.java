@@ -1,3 +1,31 @@
+// MenuActivity.java --- 
+// 
+// Filename: MenuActivity.java
+// Description: 
+// Author: Sevki Hasirci
+// Maintainer: Sevki Hasirci
+// Created: Fri Apr 27 16:06:50 2012 (+0100)
+// Version: 
+// Last-Updated: 
+//           By: 
+//     Update #: 0
+// URL: http://sevki.org
+// Keywords: 
+// Compatibility: 
+// 
+// 
+
+// Commentary: 
+// MenuActivity moved from DogboneIsland Activity....
+// 
+// 
+// 
+
+// Change Log:
+// 
+// 
+// 
+// 
 package team18.cs.ncl.ac.uk;
 
 import android.app.Activity;

@@ -37,44 +37,47 @@ import org.json.JSONObject;
 
 
 public class Chapter {
-		public int id;
-		public String Name;
-		public int SetIn;
-		public LinkedList<GameChar> Characters = new LinkedList<GameChar>();
-		public LinkedList<Speech> Dialog =new LinkedList<Speech>();
-		public Iterator<Speech> SpeechIterator;
-		public int NextAction;
-		public int NextActionParams;
+    public int id;
+    public String Name;
+    public int SetIn;
+    public LinkedList<GameChar> Characters = new LinkedList<GameChar>();
+    public LinkedList<Speech> Dialog =new LinkedList<Speech>();
+    public Iterator<Speech> SpeechIterator;
+    public int NextAction;
+    public int NextActionParams;
 		
-		Chapter(String json)
+    /** 
+     * Takes in  a JSON strong and parses its values.
+     */ 
+    Chapter(String json)
+    {
+	JSONObject thisChapter;
+	try {
+	    thisChapter = new JSONObject(json);
+	    id =thisChapter.getInt("id");
+	    Name = thisChapter.getString("name");
+	    SetIn= thisChapter.getInt("SetIn");
+	    JSONArray chars = thisChapter.getJSONArray("characters");
+	    JSONArray dialog = thisChapter.getJSONArray("dialog");
+						
+	    for(int i =0; i<chars.length();i++)
 		{
-			JSONObject thisChapter;
-				try {
-						thisChapter = new JSONObject(json);
-						id =thisChapter.getInt("id");
-						Name = thisChapter.getString("name");
-						SetIn= thisChapter.getInt("SetIn");
-						JSONArray chars = thisChapter.getJSONArray("characters");
-						JSONArray dialog = thisChapter.getJSONArray("dialog");
+		    Characters.add(new GameChar(chars.get(i).toString()));
+		}
+	    for(int i =0; i<dialog.length();i++)
+		{
+		    Dialog.add(new Speech(dialog.get(i).toString()));
+		}
+	    NextAction = thisChapter.getInt("nextAction");
+	    NextActionParams = thisChapter.getInt("nextActionParams");
 						
-						for(int i =0; i<chars.length();i++)
-						{
-							Characters.add(new GameChar(chars.get(i).toString()));
-						}
-						for(int i =0; i<dialog.length();i++)
-						{
-							Dialog.add(new Speech(dialog.get(i).toString()));
-						}
-						NextAction = thisChapter.getInt("nextAction");
-						NextActionParams = thisChapter.getInt("nextActionParams");
-						
-				} catch (JSONException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+	} catch (JSONException e) {
+	    // TODO Auto-generated catch block
+	    e.printStackTrace();
+	}
 			
 				
-			SpeechIterator=Dialog.iterator();
+	SpeechIterator=Dialog.iterator();
 			
-		}
+    }
 }

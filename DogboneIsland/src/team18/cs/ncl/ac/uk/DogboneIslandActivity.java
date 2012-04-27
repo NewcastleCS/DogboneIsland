@@ -78,7 +78,7 @@ public class DogboneIslandActivity extends Activity {
          * Progressbar
          */
         pdialog = ProgressDialog.show(this, "", 
-                "We are talking to the pirates our pirate mateys!! Be patient you scurvy dog...", true);
+				      "We are talking to the our pirate mateys!! Be patient you scurvy dog...", true);
     
     	
         mPrefs = getSharedPreferences(FILENAME,MODE_PRIVATE);
@@ -152,13 +152,13 @@ public class DogboneIslandActivity extends Activity {
         FbRelatedStuff.facebook.authorizeCallback(requestCode, resultCode, data);
 	
     }
-	/*
-	 * Got what I need it's time to move on!!
-	 * http://g.sevki.org/JDrWU5
-	 */
+    /*
+     * Got what I need it's time to move on!!
+     * http://g.sevki.org/JDrWU5
+     */
     public void GoNoWGo() {
     	if(gotFbData && gotImagePath) {
-    		pdialog.dismiss();
+	    pdialog.dismiss();
 	    Intent intent =
 		new Intent(this, team18.cs.ncl.ac.uk.MenuActivity.class);
 	    startActivity(intent);
@@ -175,7 +175,6 @@ public class DogboneIslandActivity extends Activity {
              * Output can be a JSONArray or a JSONObject.
              * Try JSONArray and if there's a JSONException, parse to JSONObject
              */
-      
             try {
                 JSONArray json = new JSONArray(response);
                 FbRelatedStuff.ImagePath=json.getJSONObject(0).get("pic").toString();

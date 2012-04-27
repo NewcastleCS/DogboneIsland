@@ -1,3 +1,31 @@
+// FlashCardTools.java --- 
+// 
+// Filename: FlashCardTools.java
+// Description: 
+// Author: Sevki Hasirci
+// Maintainer: Sevki Hasirci
+// Created: Fri Apr 27 15:58:00 2012 (+0100)
+// Version: 
+// Last-Updated: 
+//           By: 
+//     Update #: 0
+// URL: http://sevki.org
+// Keywords: 
+// Compatibility: 
+// 
+// 
+
+// Commentary: 
+// this class googles the internetz with bing for images of certain words 
+// of the dictionary.
+// 
+// 
+
+// Change Log:
+// 
+// 
+// 
+// 
 package team18.cs.ncl.ac.uk;
 
 import org.json.JSONArray;

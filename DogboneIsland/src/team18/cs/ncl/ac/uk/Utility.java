@@ -1,3 +1,31 @@
+// Utility.java --- 
+// 
+// Filename: Utility.java
+// Description: 
+// Author: Sevki Hasirci
+// Maintainer: Sevki Hasirci
+// Created: Fri Apr 27 16:11:17 2012 (+0100)
+// Version: 
+// Last-Updated: 
+//           By: 
+//     Update #: 0
+// URL: http://sevki.org
+// Keywords: 
+// Compatibility: 
+// 
+// 
+
+// Commentary: 
+// Borrowed code from facebook sdk sample app...
+// Thats why they do samples...
+// http://g.sevki.org/Jrj9TQ 
+// 
+
+// Change Log:
+// 
+// 
+// 
+// 
 package team18.cs.ncl.ac.uk;
 
 import java.io.BufferedInputStream;

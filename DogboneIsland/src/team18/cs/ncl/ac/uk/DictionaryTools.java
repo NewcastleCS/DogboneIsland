@@ -49,85 +49,94 @@ import android.app.Application;
 import android.os.Environment;
 
 public class DictionaryTools extends Application {
-	private  String WEB_PATH = "http://ncl.sevki.org/dictionaryJ.php";
+    private  String WEB_PATH = "http://ncl.sevki.org/dictionaryJ.php";
 	
-	private File ROOT_PATH  = Environment.getExternalStorageDirectory();
-	private  File DICTIONARY_PATH = new File(ROOT_PATH," team18.cs.ncl.ac.uk.dictionary.json");
+    private File ROOT_PATH  = Environment.getExternalStorageDirectory();
+    private  File DICTIONARY_PATH = new File(ROOT_PATH," team18.cs.ncl.ac.uk.dictionary.json");
 
 
 
-	public static LinkedList<WordPair> pairs = new LinkedList<WordPair>();
+    public static LinkedList<WordPair> pairs = new LinkedList<WordPair>();
+    
+    /*
+     * Returns random Word and its properties...
+     */ 
+    public WordPair getRandom()
+    {
+	try {
+	    /*
+	     * improves start-up time do-not remove
+	     */
+	    if(pairs.size()<=0) {
+		ReadDictionary();
+	    }
+	} catch (Exception e) {
+	}
 	
-	public WordPair getRandom()
-	{
-		try {
-		/*
-		 * improves start-up time do-not remove
-		 */
-			if(pairs.size()<=0) {
-				ReadDictionary();
-			}
-		} catch (Exception e) {
-		}
-	
-		Random rn = new Random();
-		if (pairs.size()==0) {
-			return new WordPair("ERROR", "ERROR");
-		}
-		return pairs.get(rn.nextInt(pairs.size()));
+	Random rn = new Random();
+	if (pairs.size()==0) {
+	    return new WordPair("ERROR", "ERROR");
+	}
+	return pairs.get(rn.nextInt(pairs.size()));
 		
 			
-	}
-	public boolean ParseJSONDictionary(String json)
-	{
-		System.out.println("starting parsing");
-			try {
-				JSONObject job = new JSONObject(json);
-				JSONArray ja = job.getJSONArray("dictionary");
-				for (int i = 0; i < ja.length(); i++)
-				{
-					WordPair p = new WordPair();
+    }
+
+    /*
+     * Parses JSON to Word pairs.
+     */
+    public boolean ParseJSONDictionary(String json)
+    {
+	System.out.println("starting parsing");
+	try {
+	    JSONObject job = new JSONObject(json);
+	    JSONArray ja = job.getJSONArray("dictionary");
+	    for (int i = 0; i < ja.length(); i++)
+		{
+		    WordPair p = new WordPair();
 					
-					JSONObject jo = ja.getJSONObject(i);
-					p.Definition=jo.getString("definition");
-					byte[] a=jo.getString("word").getBytes("UTF-8");
-					p.Word=new String(a,"UTF-8" );
-					p.Synonym=jo.getString("synonym");
-					p.SampleUse=jo.getString("sample_use");
-					p.ImagePath=jo.getString("image_path");
-					p.Difficulty=jo.getInt("difficulty");
-					p.WordId=jo.getInt("word_id");
-					pairs.add(p);
-				}
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-			
-				e.printStackTrace();
-				return false;
-			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		return true;
-		
-	}
-	public boolean ReadDictionary()
-	{
-		try {
-			String storyJson =ResourceTools.ReadFromLocal(DICTIONARY_PATH);
-			ParseJSONDictionary(storyJson);
-			return true;
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return false;
-		} catch (SAXException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return false;
+		    JSONObject jo = ja.getJSONObject(i);
+		    p.Definition=jo.getString("definition");
+		    byte[] a=jo.getString("word").getBytes("UTF-8");
+		    p.Word=new String(a,"UTF-8" );
+		    p.Synonym=jo.getString("synonym");
+		    p.SampleUse=jo.getString("sample_use");
+		    p.ImagePath=jo.getString("image_path");
+		    p.Difficulty=jo.getInt("difficulty");
+		    p.WordId=jo.getInt("word_id");
+		    pairs.add(p);
 		}
-		
+	} catch (JSONException e) {
+	    e.printStackTrace();
+	    return false;
+	} catch (UnsupportedEncodingException e) {
+	    e.printStackTrace();
 	}
+	return true;
+		
+    }
+
+    /*
+     * Reads the Dictionary file from the externals storage, assumes that there is one, wont work it there isn't 
+     * and thats by design.
+     */
+    public boolean ReadDictionary()
+    {
+	try {
+	    String storyJson =ResourceTools.ReadFromLocal(DICTIONARY_PATH);
+	    ParseJSONDictionary(storyJson);
+	    return true;
+	} catch (IOException e) {
+	    // TODO Auto-generated catch block
+	    e.printStackTrace();
+	    return false;
+	} catch (SAXException e) {
+	    // TODO Auto-generated catch block
+	    e.printStackTrace();
+	    return false;
+	}
+		
+    }
 
     public Boolean DownloadDictionaryToLocal()
     {

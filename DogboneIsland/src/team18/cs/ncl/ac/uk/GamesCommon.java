@@ -6,9 +6,9 @@
 // Maintainer: Sevki Hasirci
 // Created: Tue Apr 24 05:34:19 2012 (+0100)
 // Version: 
-// Last-Updated: 
-//           By: 
-//     Update #: 0
+// Last-Updated: Fri Apr 27 16:00:13 2012 (+0100)
+//           By: Sevki Hasirci
+//     Update #: 1
 // URL: http://sevki.org
 // Keywords: 
 // Compatibility: 
@@ -22,7 +22,10 @@
 // 
 
 // Change Log:
-// 
+// 27-Apr-2012    Sevki Hasirci  
+//    Last-Updated: Fri Apr 27 16:00:13 2012 (+0100) #1 (Sevki Hasirci)
+//    Added the facebook bindings here asswell, now it will post game win or 
+//    defeats to facebook for everygame within the same method.
 // 
 // 
 // 
