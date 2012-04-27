@@ -29,12 +29,8 @@
 // 
 package team18.cs.ncl.ac.uk;
 
-import java.util.Dictionary;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import team18.cs.ncl.ac.uk.FbRelatedStuff.gender;
 
 public class Speech {
 

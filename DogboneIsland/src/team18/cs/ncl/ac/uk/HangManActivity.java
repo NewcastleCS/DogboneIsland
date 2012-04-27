@@ -72,19 +72,19 @@ public class HangManActivity extends Activity implements OnClickListener
     public static DictionaryTools t = new DictionaryTools();
     int NextChapter = -1;
     /* Set the length of the word dash array to the length of the word. This will hold the dashes and correctly guessed
-    letters. */
+       letters. */
     protected String wordDash[];
     protected String wordArr[];
     protected String[] wordCheck = new String[10]; //Added this array to stop users guessing the same chars
     
-	protected WordPair wordDefPair;
+    protected WordPair wordDefPair;
     protected String dashCollection = ""; //The collection of dashes in the word, e.g. "_ _ _ _"
     protected String dashString = ""; //The concatenated collection of dashes
 
     protected int correctGuess = 0; //Used to check against the word length. If correct guesses = word length, then the word has been discovered
     private OnClickListener benjiWhisperer = new OnClickListener() {
 	    @Override
-		public void onClick(View v) {
+	    public void onClick(View v) {
 		// TODO Auto-generated method stub
 		Button thisButton = (Button) v;
 		String s =thisButton.getText().toString();
@@ -97,7 +97,7 @@ public class HangManActivity extends Activity implements OnClickListener
 	    
     /** Called when the activity is first created. */
     @Override
-	public void onCreate(Bundle savedInstanceState)
+    public void onCreate(Bundle savedInstanceState)
     {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.hangman);
@@ -105,9 +105,9 @@ public class HangManActivity extends Activity implements OnClickListener
 	//this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 	Bundle b = getIntent().getExtras();
 	if(b!=null)
-	{
+	    {
 		int value = b.getInt("nextChapter");
-	}
+	    }
 	
 	t.ReadDictionary();
 	
@@ -127,16 +127,16 @@ public class HangManActivity extends Activity implements OnClickListener
 	
     }
     @Override
-	protected void onStart(){
+    protected void onStart(){
 	super.onStart();
 	
     }
-   public void ShowReminder()
-   {
-	   GamesCommon.displayWordHint(wordDefPair, this);
+    public void ShowReminder()
+    {
+	GamesCommon.displayWordHint(wordDefPair, this);
 
 		
-   }
+    }
     public void setup() throws IOException, InterruptedException
     {		
 		
@@ -155,10 +155,10 @@ public class HangManActivity extends Activity implements OnClickListener
 		
 		@Override
 		public void onClick(View arg0) {
-			// TODO Auto-generated method stub
-			ShowReminder();
+		    // TODO Auto-generated method stub
+		    ShowReminder();
 		}
-	});
+	    });
 	
 	//Initialise all of the wordDash[] elements to '_'. 
 	for (int i = 0; i < wordDash.length; i++) 
@@ -209,9 +209,10 @@ public class HangManActivity extends Activity implements OnClickListener
 	//by 1. This is used to determine if the user has won the game or not (if the correctGuess = the size of the word array,
 	//then all of the letters have been found.
 	
-	/*Need to add an array of already guessed letters and not count it if they guess the same letter
+	/* 
+	 * Need to add an array of already guessed letters and not count it if they guess the same letter
 	 * Jamie.
-	*/
+	 */
 	for(int i = 0; i<ranWord.length(); i++)
 	    {
 		if(letter.equals(wordArr[i])&&(!letter.equals(wordCheck[i])))
@@ -258,33 +259,32 @@ public class HangManActivity extends Activity implements OnClickListener
 			dashString += wordDash[i] + " "; 
 		    }
 		word.setText(dashString); 
-			try {
-			DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,1,wordDefPair.WordId, 1,-1);
-			 
+		try {
+		    DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,1,wordDefPair.WordId, 1,-1);
+			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
 		}
-			GamesCommon.displayEndGame(GameStatus.Won,  this);
+		GamesCommon.displayEndGame(GameStatus.Won,  this);
 		//displayEndGame(getString(R.string.WonTxt));
-	
+			
 	    }
     }
-
     
-
+    
+    
     private void youLost() {
 	//If the guessCount has decreased to zero then there are no limbs left to be added to the stickman, therefore the game is
 	//Lost.
 	if(lives == 0)
 	    {
 		GamesCommon.displayEndGame(GameStatus.Lost,  this);
-
 		try {
-			DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,1,wordDefPair.WordId, -1,-1);
+		    DogBoneServer.sendUserScoreJson(FbRelatedStuff.uid,1,wordDefPair.WordId, -1,-1);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
 		}
 	    }
     }
@@ -311,10 +311,7 @@ public class HangManActivity extends Activity implements OnClickListener
     	
     	LinearLayout benjaminContainer = (LinearLayout) findViewById(R.id.BenjaminContainer);
 	width -=202;
-	//AlertDialog.Builder builder = new AlertDialog.Builder(this);
-	//builder.setMessage(SDK_INT+"-" +width);
-	//AlertDialog alert = builder.create();
-	//alert.show();
+
 		
 		
 	
@@ -354,11 +351,11 @@ public class HangManActivity extends Activity implements OnClickListener
     {
 		
     }
-	@Override
-	public void onClick(View arg0) {
-		// TODO Auto-generated method stub
+    @Override
+    public void onClick(View arg0) {
+	// TODO Auto-generated method stub
 		
-	}
+    }
 
 }
 

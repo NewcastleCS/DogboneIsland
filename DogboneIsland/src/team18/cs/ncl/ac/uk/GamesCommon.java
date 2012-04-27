@@ -45,6 +45,7 @@ import android.view.ViewParent;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
@@ -148,22 +149,38 @@ public static void displayWordHint(WordPair p,final Activity li) {
 		
 		//New intent 
 			 
-		Dialog dialog = new Dialog(li);
+		final Dialog dialog = new Dialog(li);
 		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		dialog.setContentView(R.layout.word_hint);
-		TextView Word = (TextView) dialog.findViewById(R.id.word_hint_word);
+		
+		LinearLayout mother = (LinearLayout) dialog.findViewById(R.id.word_hint_mother);
 		TextView Definition = (TextView) dialog.findViewById(R.id.word_hint_definition);
 		TextView Synonym = (TextView) dialog.findViewById(R.id.word_hint_synonym);
 		TextView SampleUse = (TextView) dialog.findViewById(R.id.word_hint_sample_use);
 		
-		
-		Word.setText(Html.fromHtml(p.Word));
 		dialog.setCancelable(true);
 		Definition.setText(Html.fromHtml("<b>Definition:</b>"+p.Definition));
-		Synonym.setText(" - "+p.Synonym);
+		Synonym.setText(p.Synonym);
 		SampleUse.setText(Html.fromHtml("<b>Sample use:</b>"+p.SampleUse));
 		
 		dialog.show();
+		
+		
+		/*
+		 * Lets set it up so when clicked on this control disappears...
+		 */
+		dialog.setCanceledOnTouchOutside(true);
+		mother.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				dialog.dismiss();
+			}
+		});
+		
+		
+
 
 	    }
 

@@ -9,5 +9,6 @@ public  class FbRelatedStuff {
 	public static String LastName;
 	public static String Name;
 	public static gender Gender;
+	public static String ImagePath;
 	public enum gender {male,female}
 }

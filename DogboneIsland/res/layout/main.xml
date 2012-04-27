@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="@drawable/shippy"> >
+    android:background="@drawable/z_menu_screen"> >
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -16,23 +16,23 @@
         <RelativeLayout
             android:id="@+id/relativeLayout1"
             android:layout_width="match_parent"
-            android:layout_height="101dp" >
+            android:layout_height="120dp" >
 
             <ImageView
                 android:id="@+id/UserImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="14dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15dp"
                 android:src="@drawable/ic_launcher" />
 
             <TextView
                 android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/UserImage"
+                android:layout_alignBottom="@+id/UserImage"
                 android:layout_marginLeft="15dp"
                 android:layout_toRightOf="@+id/UserImage"
                 android:text="Large Text"

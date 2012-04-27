@@ -63,11 +63,15 @@ public class DictionaryTools extends Application {
 	public WordPair getRandom()
 	{
 		try {
-			System.out.println("reading");
-			ReadDictionary();
+		/*
+		 * improves start-up time do-not remove
+		 */
+			if(pairs.size()<=0) {
+				ReadDictionary();
+			}
 		} catch (Exception e) {
 		}
-		System.out.println("getting random");
+	
 		Random rn = new Random();
 		if (pairs.size()==0) {
 			return new WordPair("ERROR", "ERROR");

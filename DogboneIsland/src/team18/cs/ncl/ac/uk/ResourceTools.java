@@ -8,8 +8,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.StringReader;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.StatusLine;
@@ -20,80 +18,80 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.xml.sax.SAXException;
 
 public class ResourceTools {
-	
-	public static Boolean DownloadFile(File Path, String Url) {
-		String reString = ReadWebStream(Url);
-    	 try {
-				File f = Path;
+    
+    public static Boolean DownloadFile(File Path, String Url) {
+	String reString = ReadWebStream(Url);
+	try {
+	    File f = Path;
+	    
+	    if (!f.exists()) {
+		f.createNewFile();
+	    }
+	    System.out.print("about to write"+Url);
+	    FileOutputStream fos = new FileOutputStream(Path);
+	    fos.write(reString.getBytes("UTF-8"));
+	    System.out.print("wrote"+reString);
+	    
+	    fos.close();
 			
-				if (!f.exists()) {
-					f.createNewFile();
-				}
-				System.out.print("about to write"+Url);
-			FileOutputStream fos = new FileOutputStream(Path);
-			fos.write(reString.getBytes("UTF-8"));
-			System.out.print("wrote"+reString);
-
-			fos.close();
+	} catch (FileNotFoundException e) {
+	    // TODO Auto-generated catch block
+	    e.printStackTrace();
+	} catch (IOException e) {
+	    // TODO Auto-generated catch block
 			
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			
-			e.printStackTrace();
-		}
-		catch (NullPointerException e) {
-		
-		}
-		return true;
+	    e.printStackTrace();
 	}
+	catch (NullPointerException e) {
+		
+	}
+	return true;
+    }
     
     public static String ReadWebStream(String url) {
     	StringBuilder builder = new StringBuilder();
-		HttpClient client = new DefaultHttpClient();
-		HttpGet httpGet = new HttpGet(url);
-		try {
-			HttpResponse response = client.execute(httpGet);
-			StatusLine statusLine = response.getStatusLine();
-			int statusCode = statusLine.getStatusCode();
-			if (statusCode == 200) {
-				HttpEntity entity = response.getEntity();
-				InputStream content = entity.getContent();
-				BufferedReader reader = new BufferedReader(
-						new InputStreamReader(content, "UTF-8"));
-				String line;
-				while ((line = reader.readLine()) != null) {
-					builder.append(line);
-				}
-			} else {
-			}
-		} catch (ClientProtocolException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+	HttpClient client = new DefaultHttpClient();
+	HttpGet httpGet = new HttpGet(url);
+	try {
+	    HttpResponse response = client.execute(httpGet);
+	    StatusLine statusLine = response.getStatusLine();
+	    int statusCode = statusLine.getStatusCode();
+	    if (statusCode == 200) {
+		HttpEntity entity = response.getEntity();
+		InputStream content = entity.getContent();
+		BufferedReader reader = new BufferedReader(
+							   new InputStreamReader(content, "UTF-8"));
+		String line;
+		while ((line = reader.readLine()) != null) {
+		    builder.append(line);
 		}
-		return builder.toString();
+	    } else {
+	    }
+	} catch (ClientProtocolException e) {
+	    e.printStackTrace();
+	} catch (IOException e) {
+	    e.printStackTrace();
 	}
-	public static String ReadFromLocal(File Path) throws  IOException, SAXException
-	{
-		        FileInputStream fIn;
-		        System.out.println("now opening");
-	         fIn = new FileInputStream(Path);
+	return builder.toString();
+    }
+    public static String ReadFromLocal(File Path) throws  IOException, SAXException
+    {
+	FileInputStream fIn;
+	System.out.println("now opening");
+	fIn = new FileInputStream(Path);
 	         
-	         StringBuffer sBuffer = new StringBuffer("");
+	StringBuffer sBuffer = new StringBuffer("");
 	         
-	         int ch;
-	         System.out.println("now reading");
-	         while( (ch = fIn.read()) != -1)
-	             sBuffer.append((char)ch);
+	int ch;
+	System.out.println("now reading");
+	while( (ch = fIn.read()) != -1)
+	    sBuffer.append((char)ch);
 	         
-	         System.out.println("now parsing" + sBuffer +"wrote sbuffer");
-	         // Deprecated, switched to JSON Instead of XML.
-	         // Xml.parse(sBuffer.toString(), new MyXmlContentHandler());
+	System.out.println("now parsing" + sBuffer +"wrote sbuffer");
+	// Deprecated, switched to JSON Instead of XML.
+	// Xml.parse(sBuffer.toString(), new MyXmlContentHandler());
 	         
 	     
-	         return sBuffer.toString();
-	}
+	return sBuffer.toString();
+    }
 }

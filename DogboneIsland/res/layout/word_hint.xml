@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/word_hint_mother"
     android:orientation="vertical" >
 
     <ScrollView
@@ -20,13 +21,6 @@
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
-
-             <TextView
-                      android:id="@+id/word_hint_word"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:text="Large Text"
-                      android:textAppearance="?android:attr/textAppearanceLarge" /> 
 
                   <TextView
                       android:id="@+id/word_hint_synonym"

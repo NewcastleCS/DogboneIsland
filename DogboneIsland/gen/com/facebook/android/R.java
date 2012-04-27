@@ -44,6 +44,8 @@ public final class R {
         public static final int scene_market=0x7f02001e;
         public static final int scene_ship=0x7f02001f;
         public static final int shippy=0x7f020020;
+        public static final int z_login_screen=0x7f020021;
+        public static final int z_menu_screen=0x7f020022;
     }
     public static final class id {
         public static final int Antogonist=0x7f05001f;
@@ -75,7 +77,7 @@ public final class R {
         public static final int relativeLayout2=0x7f05000f;
         public static final int relativeLayout3=0x7f050011;
         public static final int rmndBtn=0x7f050017;
-        public static final int scrollView1=0x7f050022;
+        public static final int scrollView1=0x7f050023;
         public static final int storyCanvas=0x7f05001e;
         public static final int storyModebutton=0x7f05001a;
         public static final int textView1=0x7f050016;
@@ -83,18 +85,19 @@ public final class R {
         public static final int wordGuess=0x7f050005;
         public static final int wordJumbled=0x7f050002;
         public static final int word_hint_definition=0x7f050026;
+        public static final int word_hint_mother=0x7f050022;
         public static final int word_hint_sample_use=0x7f050027;
         public static final int word_hint_synonym=0x7f050024;
-        public static final int word_hint_word=0x7f050023;
     }
     public static final class layout {
         public static final int anagram=0x7f030000;
         public static final int flashcards=0x7f030001;
         public static final int game_end=0x7f030002;
         public static final int hangman=0x7f030003;
-        public static final int main=0x7f030004;
-        public static final int story=0x7f030005;
-        public static final int word_hint=0x7f030006;
+        public static final int login_welcome=0x7f030004;
+        public static final int main=0x7f030005;
+        public static final int story=0x7f030006;
+        public static final int word_hint=0x7f030007;
     }
     public static final class string {
         public static final int LostTxt=0x7f040004;
