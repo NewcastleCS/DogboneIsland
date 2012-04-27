@@ -37,6 +37,10 @@ public class Speech {
 	public int From;
 	public String Speech;
 	
+	
+	/*
+	 * constructor for the speech class that is created from Json Speech files.
+	 */
 	public Speech(String json)
 	{
 		try {
@@ -67,7 +71,7 @@ public class Speech {
 			Speech =tryAndReplace(Speech, "\u007Bcharacter\u003Afirstname\u007D", FbRelatedStuff.FirstName);
 			Speech =tryAndReplace(Speech, "\u007Bcharacter\u003Alastname\u007D", FbRelatedStuff.LastName);
 			Speech =tryAndReplace(Speech, "\u007Bcharacter\u003Apronoun\u007D", pronoun);
-			
+				
 			
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
